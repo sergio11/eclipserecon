@@ -1,65 +1,12 @@
 .s-subscribe{
     position: relative;
-    min-height: 532px;
+    height: calc(90vh - 80px);
     transition: all 0.3s;
     overflow: hidden;
-    .itemwrap > li .mask{
-        // &:before{
-            // content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-        // }
-    }
-    .bd-arrows{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin-top: 180px !important;
-        padding: 0;
-        
-        .bd-arrow-next,
-        .bd-arrow-prev{
-            font-size: 0;
-            z-index: 3377;
-        }
-        .bd-arrow-next{
-            left: auto;
-            right: 0;
-        }
-        @include vw(768, 1651){
-            margin-top: 160px !important;
-        }
-        @include vw(320, 767){
-            display: none;
-            margin-top: 130px !important;
-        }
-    }
-    .main-bd-arrow-prev,
-    .main-bd-arrow-next{
-        @include vw(320, 767){
-            display: none;
-        }
-    }
-    
-    .wrap-a{
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        margin-top: 180px;
-        overflow: hidden;
-        z-index: 2222;
-        @include vw(768, 1651){
-            margin-top: 160px;
-        }
-        @include vw(320, 767){
-            margin-top: 130px;
-        }
+    background-image: url('../../img/video-blank.jpg');
+    background-size:cover;
+    .container-fluid{
+        margin-top: 15%;
     }
     .wrap{
         max-width: 895px;
@@ -67,12 +14,15 @@
         margin-bottom: 25px;
         transition: all 0.3s;
     }
-    .container{
-        margin-top: 65px;
+    .sub-b-title{
+        font-size: 1.7rem;
     }
-    .b-title{
-        margin-top: 0.7em;
-        margin-bottom: 0.3em;
+    .b-title,.sub-b-title{
+        margin-top: 1em;
+        margin-bottom: 0.8em;
+        color: #fff;
+        text-shadow: 5px 5px 4px #000;
+        letter-spacing: .2rem;
     }
     .form-group{
         margin-bottom: 0;

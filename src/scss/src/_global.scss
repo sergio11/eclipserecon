@@ -284,6 +284,7 @@ label{
     font-family: $main-font;
     font-weight: bold;
     font-size: 36px;
+
     @include vw(320, 767){
         font-size: 25px;
         line-height: 38px;
@@ -337,6 +338,7 @@ h1{
         line-height: 26px;
     }
 }
+
 .bd-arrow-next,
 .bd-arrow-prev{
     background: none;

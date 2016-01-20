@@ -40,94 +40,107 @@
 			<!-- HEADER -->
 			<header class="main-header" id="main-header">
 	<div class="container">
+		<nav id="main-nav" class="nav navbar-nav" role="navigation" aria-labelledby="main-nav" aria-hidden="true" data-keyboard="true" tabindex="-1" data-backdrop="true">
+          	<div class="container">
+	            <div class="navbar-header">
+	              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navegacion">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	              </button>
+	              <a class="navbar-brand" href="/">
+	                  <img class="hidden-xs" alt="Logo de Wayook" src="https://wayook.blob.core.windows.net/static/img/logo_wayook_blanco.png?v=2.9" height="40">
+	                  <img class="visible-xs" alt="Logo de Wayook" src="https://wayook.blob.core.windows.net/static/img/logo_wayook.png?v=2.9" height="40">
+	              </a>
+	            </div>
+
+	            <div class="collapse navbar-collapse" id="navegacion">
+	              	<ul class="nav navbar-nav navbar-right">
+		                <li class="necesitas-ayuda">
+		                  	<a href="#" class="show-zopim">
+		                  		<span class="fa fa-comments"></span> 
+		                  		<em class="te-ayudamos">¿Te ayudamos?</em>
+		                  	</a>
+		                </li>
+		                <li><a href="/faqs/">FAQs</a></li>
+		                <li>
+		                	<div class="call-up pull-right">
+								<div>
+									<a href="tel:1234567790">
+										<span class="flaticon-phone72"></span> 91 584 89 62
+									</a>
+								</div>
+							</div>
+						</li>
+		                <!--<li><a data-toggle="modal" data-target="#modal-login" data-remote="/ajax/login/" href="/cuentas/login/" id="link-iniciar-sesion" class="text-success">Iniciar sesión</a></li>-->
+	                
+	              	</ul>
+	            </div>
+          	</div>
+        </nav>
+	</div>
+</header>
 	
-		<div class="row main-header-top">
-			<div class="call-up pull-left">
+		<!--<div class="row main-header-top">
+			<div class="logo-main pull-left">
+				<a href="index.html" class="brand">
+					<img src="img/logo.png" alt="Best Dessert">
+				</a>
+			</div>
+			<nav id="main-nav" role="navigation" aria-labelledby="main-nav" aria-hidden="true" data-keyboard="true" tabindex="-1" data-backdrop="true">  
+				<div class="listing">
+					<ul class="nav navbar-nav main-nav">
+						<li>
+							<a href="#main-slider" data-dismiss="modal">Subscribe</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="call-up pull-right">
 				<div>
-					<a href="tel:1234567790"><i class="flaticon-phone72"></i>1-800-BEST-CAKE</a>
+					<a href="tel:1234567790">
+						<span class="flaticon-phone72"></span> 91 584 89 62
+					</a>
 				</div>
 			</div>
-			<div class="logo-main">
-				<a href="index.html" class="brand"><img src="img/logo.png" alt="Best Dessert"></a>
-			</div>
-			<a href="#" class="shop-cart pull-right" id="shop-cart" data-toggle="modal" data-target="#modal_cart" data-remote="false"><span class="line"><b>3</b> items</span><span class="line">$<b>34.1</b> </span> <i class="flaticon-trolley7"><span>3</span></i></a>
-			<button type="button" class="mob-toggle" data-toggle="modal" data-target="#main-nav"></button>
 		</div>
-		<nav class="row" id="main-nav" role="navigation" aria-labelledby="main-nav" aria-hidden="true" data-keyboard="true" tabindex="-1" data-backdrop="true">
-			<a href="#" class="shop-cart pull-right sticky hide" data-toggle="modal" data-target="#modal_cart" data-remote="false"><i class="flaticon-trolley7"><span>3</span></i></a>   
-			<div class="listing">
-				<ul class="nav navbar-nav main-nav">
-					<li><a href="#main-slider" data-dismiss="modal">Subscribe</a>
-					</li>
-					<li><a href="#s-list" data-dismiss="modal">Catalog</a>
-					</li>
-					<li><a href="#s-discounts" data-dismiss="modal">Discounts</a>
-					</li>
-					<li><a href="#s-why" data-dismiss="modal">Why Us?</a>
-					</li>
-					<li><a href="#s-video" data-dismiss="modal">Video about us</a>
-					</li>
-					<li><a href="#s-how-work" data-dismiss="modal">How it works</a>
-					</li>
-					<li><a href="#s-shopnum" data-dismiss="modal">The Store in Figures</a>
-					</li>
-					<li><a href="#s-deliv" data-dismiss="modal">Shipping</a>
-					</li>
-					<li><a href="#s-clients" data-dismiss="modal">Reviews</a>
-					</li>
-					<li><a href="#s-address" data-dismiss="modal">Contacts</a>
-					</li>
-					<li><a href="#s-contacts" data-dismiss="modal">Feedback</a>
-					</li>
-				</ul>
-				<a href="#" class="arr-nav prev disabled">&#9679; &#9679; &#9679;</a>
-				<a href="#" class="arr-nav next">&#9679; &#9679; &#9679;</a>
-			</div><!-- .listing --><!-- .container -->
-		</nav><!-- #main-nav --><!-- .row -->
-	</div><!-- .container -->
-</header>
+		
+	</div>
+</header>-->
 			
 			<div class="main-section">
-				<!-- Banner -->
-				<section id="main-slider" class="s-subscribe ">
-	<div id="main-banner" class="component component-fullwidth fxSoftScale">
-		<ul class="itemwrap">
-			<li class="current" style="background-image: url(img/subs-bg.jpg);">
-				<div class="mask"></div>
-			</li>
-			<li class="" style="background-image: url(img/video-blank.jpg);">
-				<div class="mask"></div>
-			</li>
-			<li class="" style="background-image: url(img/discounts-bg.jpg);">
-				<div class="mask"></div>
-			</li>
-		</ul>
-		<div class="container bd-arrows">
-			<a class="main-bd-arrow-prev bd-arrow-prev" href="#">Previous item</a>
-			<a class="main-bd-arrow-next bd-arrow-next" href="#">Next item</a>
-		</div>
-	</div>
+				<!-- Front Section -->
+				<div class="jumbotron s-subscribe">
 	<div class="wrap-a text-center">
-		<div class="container">
-			<div class="wrap">
-				<h1 class="b-title c-white">Our best desserts for you</h1>
-				<div class="sub-title c-white">We discover something new every day</div>
-				<form action="index.html" class="form-sub mt15 mb5">
-					<div class="form-group dtab text-left">
-						<div class="media-left">
-							<input type="email" class="form-control" placeholder="Your e-mail" data-notice="invalid e-mail" required>
-							<div class="help-block with-errors"></div>
-						</div>
-						<div class="media-left text-right">
-							<button type="submit" class="btn btn-v2 btn-clicked btn--moema">Subscribe</button>
-						</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 text-center text-uppercase">
+					<h1>Disfruta de tu tiempo y olvídate de tu limpieza</h1>
+					<h2 class="sub-b-title hidden-xs">Reserva tu <strong>limpiador de confianza</strong> en Wayook desde sólo <strong>8.90€/hora</strong></h2>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="wrap">
+						<form action="index.html" class="form-sub mt15 mb5">
+							<div class="form-group dtab text-left">
+								<div class="media-left">
+									<input type="text" class="form-control" placeholder="Tu código postal" data-notice="invalid" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="media-left text-right">
+									<button type="submit" class="btn btn-v2 btn-clicked btn--moema">Reservar Cuidado</button>
+								</div>
+							</div>
+						</form>
+						<div class="sub-imp text-left c-white">* for 10% discount</div>
 					</div>
-				</form>
-				<div class="sub-imp text-left c-white">* subscribe for 10% discount</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 				<!-- Catalog -->
 				<section id="s-list" class="s-list ">
