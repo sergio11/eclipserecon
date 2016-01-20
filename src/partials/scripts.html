@@ -1,0 +1,60 @@
+<!--Load libs-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="lib/jquery/jquery-1.11.3.min.js"><\/script>')</script>
+
+<!-- Load Bootstrap and bootstrap plugins -->
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="lib/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<script src="lib/bootstrap-filestyle.min.js"></script>
+<!-- Load some plugins -->
+<!--[if (gt IE 8)|!(IE)]><!-->
+<script src="lib/swiper/js/swiper.jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if IE 8 ]>
+	<script src="lib/swiper-2.7.6/idangerous.swiper.min.js"></script>
+<![endif]-->
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/sly.min.js"></script>
+<script src="lib/countdown/jquery.countdown.min.js"></script>
+<script src="lib/device.js"></script>
+<script src="lib/jquery.parallax-scroll.js"></script>
+<script src="lib/intlTelInput/intlTelInput.min.js"></script>
+<script src="lib/jquery.scrollTo.min.js"></script>
+<script src="lib/jquery.magnify.js"></script>
+<script src="lib/jquery.easing.1.3.js"></script>
+<script src="lib/dragula/dragula.min.js"></script>
+<script src="lib/videoBG/videoBG.js"></script>
+<!--Load scripts-->
+<script src="lib/calctable.min.js"></script>
+
+<!-- You can find global settings here -->
+<script src="js/globals.js"></script>
+<script src="js/util-functions.js"></script>
+
+<script src="js/inits/init-settings.js"></script>
+<script src="js/inits/init-checkBrowser.js"></script>
+<script src="js/inits/init-video.js"></script>
+<script src="js/inits/init-youtube.js"></script>
+<script src="js/inits/init-bigSlider.js"></script>
+<script src="js/inits/init-clientSlider.js"></script>
+<script src="js/inits/init-affix.js"></script>
+<script src="js/inits/init-mainMenu.js"></script>
+<script src="js/inits/init-categories.js"></script>
+<script src="js/inits/init-phoneMasking.js"></script>
+<script src="js/inits/init-validation.js"></script>
+<script src="js/inits/init-promos.js"></script>
+<script src="js/inits/init-numberAnimation.js"></script>
+<script src="js/inits/init-numberInputs.js"></script>
+<script src="js/inits/init-cart.js"></script>
+<script src="js/inits/init-modalDetailed.js"></script>
+
+<script src="js/entry.js"></script>
+<script>
+	var baseUrl = '';
+	if (typeof SITE_TEMPLATE_PATH !== "undefined") baseUrl = SITE_TEMPLATE_PATH + "/" + baseUrl;
+	$(function(){
+		ls.init.phoneMasking(document);
+		$('.form-tel').intlTelInput("loadUtils", baseUrl + '/lib/intlTelInput/utils.js');
+	})
+</script>

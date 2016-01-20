@@ -1,0 +1,236 @@
+.s-video{
+    position: relative;
+    min-height: 400px;
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    // .video-size{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     &:before{
+    //         content: "";
+    //         display: block;
+    //         margin-top: 56.25%;
+    //     }
+    iframe{
+        position: absolute;
+        // top: 0;
+        top: 50%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1080px;
+        // margin-top: -540px;
+        transform: translateY(-50%);
+    }
+        // @include vw(1200, 1651){
+        //     #ytpl{
+        //         height: 720px;
+        //     }
+        // }
+        // @include vw(992, 1199){
+        //     #ytpl{
+        //         height: 480px;
+        //     }
+        // }
+    // }
+    .poster{
+        background-position: center;
+        background-size: cover;
+        font-size: 0;
+    }
+    .container,
+    .container > .row{
+        height: 100%;
+    }
+    .video-info, #container .video-info{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 55;
+        background-color: rgba(255, 255, 255, 0.85);
+        width: 710px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        padding: 11px;
+        border-radius: 3px;
+        transition: all 0.3s;
+        .wrap{
+            background-color: #fff;
+            padding: 15px;
+            // padding-bottom: 15px;
+            border-radius: 3px;
+        }
+        .b-title{
+            transition: .4s;
+            position: relative;
+            margin-top: 0;
+            padding-left: 70px;
+            margin-bottom: 0.4em;
+            color: #2e313e;
+            cursor: pointer;
+            
+            &:before{
+                content: '';
+                @include sprite($ico-video-icon);
+                @include sprite-mh50p($ico-video-icon);
+                position: absolute;
+                top: 50%;
+                left: 0;
+            }
+            &:hover{
+                color: lighten(#2e313e, 15%);
+            }
+        }
+        .title-text{
+            border-bottom: 1px dotted;
+
+        }
+        .name{
+            margin-bottom: 1.1em;
+            padding-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        @include vw(320, 767) {
+            width: 80%;
+            .text {
+                width: 90%;
+            }
+            .wrap {
+                padding-top: 20px;
+            }
+            .name {
+                margin-top: 20px;
+            }
+        }
+        .text{
+            line-height: 24px;
+            font-weight: 300;
+            font-size: 16px;
+            color: #0a0c11;
+        }
+    }
+
+    @include vw(1652, 5000) {
+        .video-info{
+            width: 590px;
+            .b-title {
+                margin-top: 10px;
+            }
+            .name{
+                font-size: 18px;
+            }
+            .text{
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    @include vw(1200, 1651) {
+        .video-info{
+            width: 585px;
+            .name{
+                font-size: 16px;
+            }
+            .text{
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    @include vw(992, 1199) {
+        min-height: 410px;
+        .video-info{
+            width: 485px;
+            .b-title{
+                font-size: 28px;
+            }
+            .wrap{
+                padding-bottom: 15px;
+            }
+            .name{
+                font-size: 16px;
+            }
+            .text{
+                line-height: 1.5;
+                font-size: 14px;
+            }
+        }
+    }
+    @include vw(768, 991){
+        min-height: 360px;
+        .video-info{
+            width: 365px;
+            padding: 7px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+            .b-title{
+                margin-bottom: 0.6em;
+                padding-left: 60px;
+                font-size: 20px;
+            }
+            .wrap{
+                padding: 10px;
+                padding-bottom: 15px;
+            }
+            .name{
+                font-size: 13.5px;
+                line-height: 20px;
+            }
+            .text{
+                // line-height: 1.5;
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+    @include vw(320, 767) {
+        // display: none;
+        padding: 10px;
+        .video-info{
+            // width: 50%;
+            padding: 3px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 0;
+            .wrap{
+                padding: 4px;
+                padding-bottom: 4px;
+            }
+            .b-title{
+                padding-left: 15px;
+                font-size: 14px;
+                margin-bottom: 0;
+                margin-left: 5px;
+                &:before{
+                    @include sprite($ico-video-icon-mob);
+                    @include sprite-mh50p($ico-video-icon-mob);
+                }
+            }
+            .name{
+                margin-bottom: 0.4em;
+                margin-top: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            .text{
+                line-height: 1.5;
+            }
+
+            .b-title,
+            .name,
+            .text{
+                font-size: 14px;
+            }
+        }
+    }
+}

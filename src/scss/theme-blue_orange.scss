@@ -1,0 +1,6 @@
+@import "src/mixins";
+@import "src/colors/colors-common";
+@import "src/colors/colors-blue_orange";
+.landing-wrap{
+	@import "src/theme-core";
+}

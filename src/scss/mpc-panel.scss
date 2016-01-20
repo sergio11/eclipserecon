@@ -1,0 +1,126 @@
+@import "src/mixins";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url('../../img/pattern.png');
+    margin: 0;
+    padding: 0;
+}
+
+.mpc_panel {
+    // @include vw(320,767) {
+    //     width: 100px;
+    //     display: none;
+    // } 
+    background: #22313F;
+    position: relative;
+    height: 60px;
+    margin: 0;
+    z-index: 2;
+    &:hover {
+        color: #e2eeee;
+    }
+    span {
+        position: relative;
+        top: 1px;
+        margin-right: 10px;
+        &.mpc_panel_closer {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            cursor: pointer;
+            &:hover {
+                i:before {
+                    color: #D7D9D9;
+                }
+            }
+        }
+    }
+    a {
+        background: #6C6C6C;
+        display: inline-block;
+        margin: 12px -4px 12px 0px;
+        padding: 6px 14px;
+        vertical-align: middle;
+        &:hover,&.active {
+                background: #DDDDDD;
+            }
+        img {
+            display: inline-block;
+            height: 22px;
+            &.mouse-over {
+                display: none;
+            }
+
+            &.active, &:hover {
+                background: #DDDDDD;
+                img {
+                    display: none;
+                    &.mouse-over {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ul {
+    font-family: Arial;
+    font-size: 14px;
+    list-style: none;
+    color: #EEEEEE;
+    //word-spacing: -4px;
+    margin: 0;
+}
+
+#mpc_desktop {
+    border-radius: 3px 0px 0px 3px;
+}
+
+#mpc_phone {
+    border-radius: 0px 3px 3px 0px;
+}
+
+#mpc_tablet {
+    border-left: 1px solid #666666;
+    border-right: 1px solid #666666;
+}
+
+#mpc_preview {
+    background: #fff;
+    display: block;
+    height: 100%;
+    margin: -60px auto 0px auto;
+    padding-top: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    &.desktop-view {
+        width: 100%;
+    }
+    &.tablet-view {
+        width: 785px;
+    }
+    &.phone-view {
+        width: 337px;
+    }
+}
+
+#mpc_device {
+    a {
+        &.active, &:hover {
+            background-color: #DDDDDD;
+            img {
+                display: none;
+                &.mouse-over {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

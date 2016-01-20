@@ -1,0 +1,30 @@
+.tumbl-styles{
+    position: fixed;
+    top: 10%;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    z-index: 555;
+    .tumb-uses{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 2px solid $back-bg;
+    }
+    .st-comm{
+        background-image: linear-gradient(top, $main-color1 50%, $main-color2 100%);
+    }
+    .st-bgr-teal{
+        
+    }
+    .st-bl-or{
+        
+    }
+    .st-db-yel{
+        
+    }
+    .st-r-gr{
+        
+    }
+}

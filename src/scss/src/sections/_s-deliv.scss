@@ -1,0 +1,234 @@
+.s-deliv{
+    // background-color: $back-bg;
+    // background-color: #fbfcfc;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 30px;
+    z-index: 1;
+    .deliv-wrap{
+        max-width: 1060px;
+        margin: 0 auto;
+    }
+    .deliv-col{
+        display: inline-block;
+        position: relative;
+        padding-top: 75px;
+        vertical-align: top;
+        text-align: left;
+        -moz-text-align-last: left;
+        color: #23313E;
+        &.lf{
+            width: 335px;
+        }
+        &.rt{
+            width: 410px;
+        }
+        .icon-deliv{
+            background-color: $back-bg;
+            position: absolute;
+            top: -48px;
+            left: 50%;
+            width: 96px;
+            height: 96px;
+            margin-left: -48px;
+            border-radius: 50%;
+            box-shadow: inset 0 -4px rgba(1, 3, 4, 0.15);
+            text-align: center;
+            -moz-text-align-last: center;
+            // color: #8a8e9f;
+            color: #23313E;
+            &:before{
+                margin: 0;
+                line-height: 96px;
+                font-size: 50px;
+            }
+            &.flaticon-commerce:before{
+                font-size: 42px;
+            }
+        }
+        
+        .title{
+            margin-top: 0;
+            // margin-bottom: 0.3em;
+            line-height: 1.5;
+            text-align: left;
+        }
+        .line{
+            margin-bottom: 0.9em;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .name{
+            margin-bottom: 0.2em;
+            font-weight: bold;
+            color: black;
+        }
+        .text{
+            color: #36383e;
+             line-height: 24px;
+             min-height: 120px;
+             @include vw(768,991) {
+                min-height: 100px;
+             }
+             @include vw(320, 767) {
+                min-height: 0;
+             }
+        }
+    }
+    @include vw(768, 991){
+        padding-bottom: 40px;
+        .deliv-col{
+            &.rt{
+                width: 385px;
+            }
+            .line{
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+    @include vw(320, 767){
+        padding-bottom: 0;
+        .deliv-col{
+            padding-top: 40px;
+            width: auto !important;
+            padding-left: 10px;
+            padding-right: 10px; 
+            &.rt{
+                background-color: #fff;
+                margin-top: 40px;
+                margin-left: -5px;
+                margin-right: -5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+            }
+            .icon-deliv{
+                width: 70px;
+                height: 70px;
+                margin-left: -35px;
+                top: -35px;
+                &:before{
+                    line-height: 73px;
+                    font-size: 40px;
+                }
+                &.flaticon-commerce{
+                    background-color: #fff;
+                    &:before{
+                        font-size: 35px;
+                    }
+                }
+            }
+            .title{
+                font-size: 20px;
+            }
+            .line{
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+    [class^="shipping-icon-"]:before,
+    [class*=" shipping-icon-"]:before {
+        // font-size: 60px;
+        @include vw(320,767) {
+            font-size: 65px;
+        }
+        @include vw(768,991) {
+            font-size: 65px;
+            margin-left: 15px;
+        }
+        @include vw(992,1199) {
+            font-size: 65px;
+            left: 10px;
+            bottom: -10px;
+            position: relative;
+        }
+        @include vw(1200, 1656) {
+            font-size: 65px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        @include vw(1657, 5000) {
+            font-size: 65px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+    }
+    .shipping-icon-delivery-truck:before {
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+    .shipping-icon-pickup-man:before {
+        @include vw(320,767) {
+            font-size: 55px;
+            margin-left: 5px;
+        }
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+    .shipping-icon-postbox:before {
+        @include vw(320,767) {
+            font-size: 55px;
+            margin-left: 5px;
+        }
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+    .shipping-icon-hand-bill:before {
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+    .shipping-icon-buy11:before {
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+    .shipping-icon-paypal:before {
+        @include vw(768,991) {
+            
+        }
+        @include vw(992,1199) {
+            
+        }
+        @include vw(1200, 1656) {
+            
+        }
+    }
+}

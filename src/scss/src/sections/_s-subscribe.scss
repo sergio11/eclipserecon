@@ -1,0 +1,177 @@
+.s-subscribe{
+    position: relative;
+    min-height: 532px;
+    transition: all 0.3s;
+    overflow: hidden;
+    .itemwrap > li .mask{
+        // &:before{
+            // content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        // }
+    }
+    .bd-arrows{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-top: 180px !important;
+        padding: 0;
+        
+        .bd-arrow-next,
+        .bd-arrow-prev{
+            font-size: 0;
+            z-index: 3377;
+        }
+        .bd-arrow-next{
+            left: auto;
+            right: 0;
+        }
+        @include vw(768, 1651){
+            margin-top: 160px !important;
+        }
+        @include vw(320, 767){
+            display: none;
+            margin-top: 130px !important;
+        }
+    }
+    .main-bd-arrow-prev,
+    .main-bd-arrow-next{
+        @include vw(320, 767){
+            display: none;
+        }
+    }
+    
+    .wrap-a{
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        margin-top: 180px;
+        overflow: hidden;
+        z-index: 2222;
+        @include vw(768, 1651){
+            margin-top: 160px;
+        }
+        @include vw(320, 767){
+            margin-top: 130px;
+        }
+    }
+    .wrap{
+        max-width: 895px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        transition: all 0.3s;
+    }
+    .container{
+        margin-top: 65px;
+    }
+    .b-title{
+        margin-top: 0.7em;
+        margin-bottom: 0.3em;
+    }
+    .form-group{
+        margin-bottom: 0;
+    }
+    .form-control{
+        width: 585px;
+        height: 52px;
+        padding-left: 24px;
+        font-size: 18px;
+    }
+    .btn{
+        margin: 0;
+        height: 52px;
+    }
+    .form-sub{
+        margin: 0 auto;
+        padding: 16px;
+    }
+        .help-block{
+            margin: 0;
+        }
+    @include vw(992, 1199){
+        .wrap{
+            max-width: 675px;
+        }
+        .form-control{
+            width: 475px;
+        }
+        .btn{
+            min-width: 150px;
+        }
+    }
+    @include vw(1200, 1651){
+        .wrap{
+            max-width: 790px;
+        }
+        .form-control{
+            width: 555px;
+        }
+        .btn{
+            min-width: 200px;
+        }
+    }
+    @include vw(768, 991) {
+        .wrap{
+            max-width: 620px;
+        }
+        .form-control{
+            width: 420px;
+        }
+        .btn{
+            min-width: 145px;
+        }
+    }
+
+    @include vw(320, 767) {
+        min-height: 255px;
+        .container{
+            margin-top: 5px;
+        }
+        .wrap{
+            max-width: 320px;
+            margin-bottom: 10px;
+        }
+        .b-title,
+        h1{
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        .form-sub{
+            margin-top: 10px !important;
+            margin-bottom: 0 !important;
+            padding: 4px;
+        }
+        .form-control{
+            width: 210px;
+            height: 37px;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+        .btn{
+            min-width: 95px;
+            height: 37px;
+            min-height: 37px;
+            padding: 0;
+            line-height: 37px;
+            font-size: 12px;
+            &:after{
+                top: -10px;
+                left: -10px;
+                bottom: -10px;
+                right: -10px;
+            }
+        }
+        .help-block{
+            display: none !important;
+            font-size: 10px;
+        }
+    }
+
+    
+}

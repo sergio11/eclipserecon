@@ -1,0 +1,140 @@
+.s-why{
+    margin-bottom: -21px;
+    .b-title{
+        margin-top: 1em;
+        margin-bottom: 1.2em;
+    }
+    .why-item{
+        display: inline-block;
+        width: 33.33%;
+        margin-bottom: 60px;
+        padding-right: 40px;
+        vertical-align: top;
+        text-align: left;
+        -moz-text-align-last: left;
+       img{
+            float: left;
+       }
+        .desc{
+            margin-left: 140px;
+            // padding-top: 15px;
+            // max-width: 270px;
+            @include vw(320,767) {
+                // padding-right: 20px;
+            }
+            @include vw(768,1199) {
+                // padding-right: 20px;
+            }
+            &:nth-child(3n) {
+                @include vw(992,1199) {
+                    padding-right: 5px;
+                    padding-right: 0;
+                }
+            }
+            @include vw(1200,1651) {
+                padding-right: 15px;
+            }
+        }
+        .name{
+            margin-bottom: 0.1em;
+            line-height: 1.2;
+            // font-family: 'ClearSans', sans-serif;
+            font-family: $main-font;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .text{
+            font-size: 16px;
+            color: #656c7e;
+            line-height: 1.5em;
+        }
+    }
+    @include vw(1200, 1651){
+        .why-item{
+
+            .desc{
+                margin-left: 120px;
+                padding-top: 5px;
+                max-width: 250px;
+            }
+        }
+    }
+
+    @include vw(992, 1199){
+        .why-item{
+            img{
+                width: 75px;
+                height: auto;
+            }
+            .desc{
+                margin-left: 95px;
+                padding-top: 5px;
+                max-width: 190px;
+            }
+            .name{
+                font-size: 16px;
+            }
+            .text{
+                font-size: 14px;
+            }
+        }
+    }
+    @include vw(768, 991){
+        .why-item{
+            img{
+                width: 75px;
+                height: auto;
+            }
+            .desc{
+                margin-left: 95px;
+                padding-top: 5px;
+                max-width: 145px;
+            }
+            .name{
+                font-size: 16px;
+            }
+            .text{
+                font-size: 14px;
+            }
+        }
+    }
+    @include vw(320, 767) {
+        padding-bottom: 0;
+        .b-title{
+            margin-top: 0.6em;
+            font-size: 22px;
+        }
+        .justify {
+            -moz-text-align-last: center;
+        }
+        .row-just{
+            display: inline-block;
+            width: 50%;
+            float: left;
+            .why-item{
+                width: 100%;
+                min-height: 220px;
+                padding: 0 5px;
+                margin-bottom: 15px;
+                text-align: center;
+                -moz-text-align-last: center;
+                img{
+                    float: none;
+                }
+                .desc{
+                    max-width: none;
+                    margin: 0;
+                    padding-top: 5px;
+                }
+                .name{
+                    margin-bottom: 0.4em;
+                }
+                .name,
+                .text{
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

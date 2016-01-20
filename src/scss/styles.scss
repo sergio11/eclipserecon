@@ -1,0 +1,524 @@
+// Core variables and mixins
+@import "bootstrap-sass/stylesheets/bootstrap/variables";
+@import "bootstrap-sass/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap-sass/stylesheets/bootstrap/normalize";
+@import "bootstrap-sass/stylesheets/bootstrap/print";
+@import "bootstrap-sass/stylesheets/bootstrap/glyphicons";
+
+// importing color variables file
+@import "src/colors/colors-common";
+// importing mixins
+@import "src/mixins";
+// importing variables
+@import "src/variables";
+// importing custom font
+@import "src/fonts";
+// importing templates
+@import "src/extend";
+// importing sprite
+@import "src/sprite";
+// importing animations
+@import "src/animations";
+
+
+html {
+  overflow-x: hidden;
+}
+
+//
+// Remove default margin.
+//
+
+body {
+	margin: 0;
+	padding: 0;
+
+	overflow-x: hidden;
+	// font-family: 'OpenSans', sans-serif;
+	font-family: $main-font;
+	font-size: 14px;
+	line-height: 1.5em;
+
+	@include vw(320, 767) {
+		font-size: 12px;
+	}
+}
+
+.modal-open {
+  overflow: hidden;
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.preloader-block {
+    position: fixed;
+    z-index: 5000;
+    background: #f8fafa;
+    opacity: 0.99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.landing-wrap{
+	height: 100%;
+	font-family: sans-serif; // 1
+	-ms-text-size-adjust: 100%; // 2
+	-webkit-text-size-adjust: 100%; // 2  
+
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	color: $text-color;
+	background-color: $body-bg;
+
+	// font-family: 'OpenSans', sans-serif;
+	font-family: $main-font;
+	font-size: 14px;
+	line-height: 1.5em;
+	@include vw(320, 767) {
+		font-size: 12px;
+	}
+
+	// Core CSS
+	@import "bootstrap-sass/stylesheets/bootstrap/scaffolding";
+	@import "bootstrap-sass/stylesheets/bootstrap/type";
+	@import "bootstrap-sass/stylesheets/bootstrap/code";
+	@import "bootstrap-sass/stylesheets/bootstrap/grid";
+	@import "bootstrap-sass/stylesheets/bootstrap/tables";
+	@import "bootstrap-sass/stylesheets/bootstrap/forms";
+	@import "bootstrap-sass/stylesheets/bootstrap/buttons";
+
+	// Components
+	@import "bootstrap-sass/stylesheets/bootstrap/component-animations";
+	@import "bootstrap-sass/stylesheets/bootstrap/dropdowns";
+	@import "bootstrap-sass/stylesheets/bootstrap/button-groups";
+	@import "bootstrap-sass/stylesheets/bootstrap/input-groups";
+	@import "bootstrap-sass/stylesheets/bootstrap/navs";
+	@import "bootstrap-sass/stylesheets/bootstrap/navbar";
+	@import "bootstrap-sass/stylesheets/bootstrap/breadcrumbs";
+	@import "bootstrap-sass/stylesheets/bootstrap/pagination";
+	@import "bootstrap-sass/stylesheets/bootstrap/pager";
+	// @import "bootstrap-sass/stylesheets/bootstrap/labels";
+	// @import "bootstrap-sass/stylesheets/bootstrap/badges";
+	// @import "bootstrap-sass/stylesheets/bootstrap/jumbotron";
+	// @import "bootstrap-sass/stylesheets/bootstrap/thumbnails";
+	@import "bootstrap-sass/stylesheets/bootstrap/alerts";
+	// @import "bootstrap-sass/stylesheets/bootstrap/progress-bars";
+	@import "bootstrap-sass/stylesheets/bootstrap/media";
+	// @import "bootstrap-sass/stylesheets/bootstrap/list-group";
+	// @import "bootstrap-sass/stylesheets/bootstrap/panels";
+	// @import "bootstrap-sass/stylesheets/bootstrap/responsive-embed";
+	// @import "bootstrap-sass/stylesheets/bootstrap/wells";
+	@import "bootstrap-sass/stylesheets/bootstrap/close";
+
+	// Components w/ JavaScript
+	@import "bootstrap-sass/stylesheets/bootstrap/modals";
+	@import "bootstrap-sass/stylesheets/bootstrap/tooltip";
+	@import "bootstrap-sass/stylesheets/bootstrap/popovers";
+	@import "bootstrap-sass/stylesheets/bootstrap/carousel";
+
+	// Utility classes
+	@import "bootstrap-sass/stylesheets/bootstrap/utilities";
+	@import "bootstrap-sass/stylesheets/bootstrap/responsive-utilities";
+
+	// libs
+	@import "src/intlTelInput";
+	@import "src/bootstrap-select";
+	@import "src/bootstrap-colorpicker";
+
+	// importing global modules and style
+	@import "src/global";
+
+	// importing header
+	@import "src/header";
+
+	// importing main block
+	@import "src/main";
+
+	// importing footer
+	@import "src/footer";
+
+	// importing core colorschemes file
+	// @import "src/theme-core";
+
+	// importing media
+	@import "src/media";
+
+	position: relative;
+	// MOVED FROM "REVERSE STYLES"
+	.main-section .counter-badge {
+		@include vw(768, 1651){
+	        min-width: 72px;
+	        height: 24px;
+	        .form-control.input-number{
+	            width: 24px;
+	            font-size: 14px;
+	        }
+	        .btn-number{
+	            width: 24px;
+	            line-height: 24px;
+	        }
+	        .input-number{
+	            min-width: 24px;
+	        }
+	    }
+	}
+
+	.has-success{
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		.form-control,
+		textarea{
+			background-color: #e2f7e9;
+			box-shadow: inset 0 0 0 1px #299834;
+			&:focus{
+			    box-shadow: inset 0 0 0 1px #299834;
+			}
+		}
+	}
+	.has-error{
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		.form-control,
+		textarea{
+			background-color: #f6e7e7;
+			box-shadow: inset 0 0 0 1px #d31616;
+			&:focus{
+			    box-shadow: inset 0 0 0 1px #d31616;
+			}
+		}
+	}
+
+	.ie8 &, .ie9 &{
+		.cart-alert.in{ top: 0;}
+
+		.cart-alert{
+			&.closed{
+			    .cart-alert-wrap{
+			        top: 120%;
+			    }
+			}
+		}
+	}
+	.ie8 &, .ie9 &, .ie &{
+		.landing-wrap{
+			.btn-sm.btn-icon:before{
+				font-size: 20px;
+				@include vw(1200, 1651){ font-size: 18px;}
+			}
+			.btn-icon:before{ font-size: 25px;}
+			.btn--moema:after{display: none;}
+		}
+	}
+
+	.ie8 &{
+		.btn-sm.btn-icon:before{ left: 20px;}
+		.btn-icon:before{ left: 35px;}
+
+		.main-nav{
+			li.slvzr-first-of-type a{ padding-left: 0;}
+			li.slvzr-last-of-type a{ padding-right: 0;}
+			a{ 
+				padding-left: 10px;
+				padding-right: 10px;
+				font-size: 15px;
+			}
+		}
+		input[type="checkbox"]{
+			display: inline-block;
+
+			& + label{
+				padding-left: 10px;
+				&:before,
+				&:after{ display: none;	}
+			}
+		}
+		input[type="radio"]{
+			display: inline-block;
+			& + label{
+				padding-left: 10px;
+				&:before,
+				&:after{
+				    display: none;
+				}
+			}
+		}
+		.component-fullwidth .itemwrap > li img {
+		    left: 0;
+		}
+
+		.swiper-pagination-bullet,
+		.swiper-pagination-switch{
+		    &:hover{
+	            background-color: $main-color1;
+	            opacity: 0.5;
+	            filter: alpha(opacity=50);
+		    }
+		}
+
+		.it-gallery-thumbs{
+		    .it-thumb{
+	            padding: 0;
+	            .wrap{
+	                margin: 0 18px;
+	            }
+		    }
+		}
+
+		.tooltip {
+	        background: none;
+	        padding: 0;
+	        .wrap{
+	            background-color: #fff;
+	            padding: 4px;
+	            margin: 0 11px;
+
+	        }
+		}
+
+		.countdown-disc{
+		    .time-left{
+	            .t-num,
+	            .t-sep{
+	                font-size: 22px;
+	            }
+	            .t-label{
+	                font-size: 10px;
+	            }
+		    }
+		}
+
+		.cart-items {
+		    .table {
+		        thead {
+		            & > tr {
+		                & > th {
+	                        font-size: 14px;
+		                }
+		            }
+		        }
+		    }
+		    .ci-info {
+	            font-size: 16px;
+		    }
+		}
+	}
+
+    .mobile & .cart-alert,
+    .tablet & .cart-alert{
+        &.in{
+            .cart-alert-wrap{
+                top: 0;
+                bottom: auto;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        &.closed{
+            .cart-alert-wrap{
+                transform: translate3d(0, 100%, 0);
+            }
+        }
+        .cart-alert-wrap{
+            top: auto;
+            bottom: 0;
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+    .mobile & .cart-alert{
+        .cart-alert-wrap{
+            margin-bottom: 50px;
+        }
+    }
+    .tablet & .cart-alert{
+        .cart-alert-wrap{
+            margin-bottom: 75px;
+        }
+    }
+
+	.desktop & .para-block{
+	    @media (min-width: 768px){
+	        background: none;
+	    }
+	}
+	.chrome & .para-img-fix,
+	.mobile & .para-img-fix{
+	    position: absolute;
+	    background-attachment: scroll;
+	}
+
+	.desktop & .s-parallax ,
+	.tablet & .s-parallax{
+	    @media (min-width: 768px){
+	        display: block;
+	    }
+	}
+
+
+	// BOOTSTRAP FIX
+
+	html & input[type="button"]{
+	  -webkit-appearance: button; // 2
+	  cursor: pointer; // 3
+	}
+	html & input[disabled] {
+	  cursor: default;
+	}
+
+	.btn .badge {
+	  position: relative;
+	  top: -1px;
+	}
+
+	.btn-xs .badge,
+	.btn-group-xs > .btn .badge {
+	  top: 0;
+	  padding: 1px 5px;
+	}
+
+	.list-group-item.active > .badge,
+	.nav-pills > .active > a > .badge {
+	  color: $badge-active-color;
+	  background-color: $badge-active-bg;
+	}
+
+	.list-group-item > .badge {
+	  float: right;
+	}
+
+	.list-group-item > .badge + .badge {
+	  margin-right: 5px;
+	}
+
+	.nav-pills > li > a > .badge {
+	  margin-left: 3px;
+	}
+
+	fieldset[disabled] .btn {
+	  cursor: $cursor-disabled;
+	  pointer-events: none; // Future-proof disabling of clicks
+	  @include opacity(.65);
+	  @include box-shadow(none);
+	}
+
+	fieldset[disabled] .btn-link {
+	  background-color: transparent;
+	  @include box-shadow(none);
+	}
+	fieldset[disabled] .btn-link {
+		&:hover,
+		&:focus {
+			color: $btn-link-disabled-color;
+			text-decoration: none;
+		}
+	}
+
+	fieldset[disabled] .form-control {
+		background-color: $input-bg-disabled;
+		opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+	}
+
+	fieldset[disabled] .form-control {
+		cursor: $cursor-disabled;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	    .input-group-sm{
+	    	input[type="date"],
+	    	input[type="time"],
+	    	input[type="datetime-local"],
+	    	input[type="month"]{
+	    		line-height: $input-height-small;
+	    	}
+	    }
+
+	    .input-group-lg{
+	    	input[type="date"],
+	    	input[type="time"],
+	    	input[type="datetime-local"],
+	    	input[type="month"]{
+	    		line-height: $input-height-large;
+	    	}
+	    }
+	}
+
+	fieldset[disabled]{
+		input[type="radio"],
+		input[type="checkbox"]{
+			cursor: $cursor-disabled;
+		}
+		.radio-inline,
+		.checkbox-inline{
+			cursor: $cursor-disabled;
+		}
+		.radio,
+		.checkbox{
+			label{
+				cursor: $cursor-disabled;
+			}
+		}
+		.navbar-default .btn-link {
+			&:hover,
+			&:focus {
+				color: $navbar-default-link-disabled-color;
+			}
+		}
+		.navbar-inverse .btn-link {
+			&:hover,
+			&:focus {
+				color: $navbar-inverse-link-disabled-color;
+			}
+		}
+	}
+
+	.container &,
+	.container-fluid .jumbotron {
+		border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
+	}
+
+	@media screen and (min-width: $screen-sm-min) {
+		.container &,
+		.container-fluid .jumbotron {
+			padding-left:  ($jumbotron-padding * 2);
+			padding-right: ($jumbotron-padding * 2);
+		}
+	}
+
+	.btn .label {
+	    position: relative;
+	    top: -1px;
+	}
+
+	@media (min-width: $grid-float-breakpoint) {
+	    .navbar-fixed-top,
+	    .navbar-static-top,
+	    .navbar-fixed-bottom{
+	    	.navbar-collapse{
+	    		padding-left: 0;
+	    		padding-right: 0;
+	    	}
+	    }
+
+		.navbar > .container .navbar-brand,
+		.navbar > .container-fluid .navbar-brand {
+			margin-left: -$navbar-padding-horizontal;
+		}
+	}
+}

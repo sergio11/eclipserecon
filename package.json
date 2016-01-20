@@ -1,0 +1,19 @@
+{
+  "name": "RMZ_LandingShop",
+  "version": "1.0.0",
+  "description": "Romza Landing Shop FrontEnd",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "romza",
+  "license": "ISC"
+}

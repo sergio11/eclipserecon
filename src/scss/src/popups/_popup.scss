@@ -1,0 +1,291 @@
+.detail-popup{
+    position: relative;
+    max-width: 1010px;
+    top: 100px;
+    padding: 40px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: none;
+    border-radius: 3px;
+    backface-visibility: hidden;
+//    -webkit-transform: translateY(-50%);
+//    transform: translateY(-50%);
+    .form-req{
+        max-width: 450px;
+    }
+    .b-title{
+        margin-bottom: 20px;
+    }
+    @include vw(320, 767){
+        top: 90px;
+        padding: 40px 5px;
+        margin: 0 5px;
+        top: 0;
+        margin-bottom: 0;
+        .b-title{
+            font-size: 18px;
+        }      
+    }
+}
+
+.modal-backdrop{
+    display: none;
+}
+
+/* Overlay style */
+.overlay {
+    display: block !important;
+	background:rgb(0,0,0);
+    background: transparent\9;
+    background:rgba(0,0,0,0.6);
+    // background: $main-color1;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+    zoom: 1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+    overflow: auto;
+    z-index: 5555;
+    backface-visibility: hidden;
+    &.in{
+        overflow-x: hidden;
+    }
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+//	width: 80px;
+//	height: 80px;
+    background: none;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	outline: none;
+    line-height: 60px;
+    font-size: 80px;
+	color: white;
+	z-index: 555;
+    transition: all 0.3s;
+
+    &.inner{
+        top: 0px;
+        right: 0px;
+        line-height: 30px;
+        font-size: 45px;
+        font-weight: bold;
+        color: black;
+    }
+    
+}
+
+
+/* Effects */
+.overlay-corner {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: translateY(50px) translateX(50px);
+	transform: translateY(50px) translateX(50px);
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+}
+
+/* Effects */
+.overlay-hugeinc {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transform: translateY(-25%) rotateX(35deg);
+    transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+}
+
+/* Effects */
+.overlay-slidedown {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s, visibility 0s 0.4s;
+}
+
+/* Effects */
+.overlay-scale {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+    transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+/* Effects */
+.overlay-door {
+	visibility: hidden;
+	width: 0;
+	left: 50%;
+    overflow: hidden;
+	transform: translateX(-50%);
+	transition: width 0.5s 0.3s, visibility 0s 0.8s;
+    .detail-popup{
+        color: black;
+        opacity: 0;
+        transition: opacity 0.3s 0.5s;
+    }
+}
+/* Effects */
+.overlay-contentpush {
+    // background: $main-color1;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-contentpush2 {
+    visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateY(100%);
+    transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+// .overlay-contentscale {
+//     visibility: hidden;
+//     -webkit-transform: translateY(100%);
+//     backface-visibility: hidden;
+//     transform: translateY(100%);
+//     -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+//     transition: transform 0.5s, visibility 0s 0.5s;
+// }
+
+// .overlay-contentscale {
+//     visibility: hidden;
+//     -webkit-transform: translateY(0%);
+//     backface-visibility: hidden;
+//     transform: translateY(0%);
+//     -webkit-transition: -webkit-transform 0.5s;
+//     transition: transform 0.5s;
+// }
+
+
+/* Effects */
+.overlay-simplegenie {
+    visibility: hidden;
+    -webkit-transform: translateY(60%) scale(0);
+    transform: translateY(60%) scale(0);
+    -webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
+    transition: transform 0.4s, visibility 0s 0.4s;
+}
+
+
+.in{
+    &.overlay-corner {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    &.overlay-hugeinc {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transition: opacity 0.5s;
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    &.overlay-slidedown {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        transition: transform 0.4s ease-in-out, opacity 0.4s;
+    }
+    &.overlay-scale {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+        transition: transform 0.4s, opacity 0.4s;
+    }
+    &.overlay-door{
+        visibility: visible;
+        overflow: auto;
+        width: 100%;
+        transition: width 0.5s, visibility 0s 0s;
+        .detail-popup{
+            opacity: 1;
+            transition-delay: 0s;
+        }
+    }
+    &.overlay-contentpush{
+        visibility: visible;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+    }
+    &.overlay-contentpush2{
+        visibility: visible;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+    }
+    &.overlay-simplegenie {
+        visibility: visible;
+        -webkit-transform: translateY(0%) scale(1);
+        transform: translateY(0%) scale(1);
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
