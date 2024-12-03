@@ -1,5 +1,6 @@
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor
+from tqdm import tqdm
 from utils.logger import appLogger
 
 class SubdomainScanner:
@@ -86,17 +87,26 @@ class SubdomainScanner:
 
     def scan(self):
         """
-        Performs the subdomain scanning using multiple threads.
+        Performs the subdomain scanning using multiple threads and displays progress with tqdm.
 
         Returns:
             list: A list of tuples containing subdomains and their resolved IP addresses.
                   Each tuple has the format (subdomain, [list of IPs]) or None if resolution fails.
         """
         appLogger.info(f"🔍 Initiating subdomain scan for: {self.domain} using {self.threads} threads")
+        results = []
+
         with ThreadPoolExecutor(max_workers=self.threads) as executor:
-            results = list(executor.map(self._scan_domain, self.wordlist))
+            with tqdm(total=len(self.wordlist), desc="🚀 Scanning", unit="subdomain") as progress_bar:
+                futures = {executor.submit(self._scan_domain, subdomain): subdomain for subdomain in self.wordlist}
+                for future in futures:
+                    result = future.result()
+                    if result:
+                        results.append(result)
+                    progress_bar.update(1)
+        
         appLogger.info(f"✅ Scan completed for: {self.domain}")
-        return [result for result in results if result]
+        return results
 
     def _scan_domain(self, subdomain):
         """
@@ -116,7 +126,6 @@ class SubdomainScanner:
             return (full_domain, [answer.address for answer in answers])
         except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.resolver.Timeout):
             return None
-
 
 if __name__ == "__main__":
     scanner = SubdomainScanner(
