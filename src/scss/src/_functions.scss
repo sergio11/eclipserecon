@@ -1,6 +1,0 @@
-@function strip-units($number) {
-  @return $number / ($number * 0 + 1);
-}
-@function to-string($value) {
-  @return inspect($value);
-}

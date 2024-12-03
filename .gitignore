@@ -1,1 +1,14 @@
-node_modules/
+# Files generated when packaging the project
+dist/
+build/
+*.egg-info/
+
+# Python cache files (no need to include them)
+__pycache__/
+
+# PyPI configuration file (do not include in the repository!)
+~/.pypirc
+
+.env
+
+notas.txt
