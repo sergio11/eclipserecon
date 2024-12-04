@@ -11,4 +11,7 @@ __pycache__/
 
 .env
 
+lib/
+sitemap.html
+
 notas.txt
