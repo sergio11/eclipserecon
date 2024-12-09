@@ -142,4 +142,3 @@ if __name__ == "__main__":
     custom_proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
     spider = OwaspSecurityScanner(target_url, proxies=custom_proxies)
     scan_results = spider.perform_full_scan()
-    # print(scan_results)
