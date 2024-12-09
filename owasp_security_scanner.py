@@ -56,12 +56,10 @@ class OwaspSecurityScanner:
         try:
             appLogger.info(f"Initiating scan on {self.target_url}...")
 
-            # Commencing passive scan
             appLogger.info("Commencing passive scan... 🚨")
             passive_scan_results = self._passive_scan()
             results['passive_scan'] = self._organize_alerts(passive_scan_results)
 
-            # Commencing active scan
             appLogger.info("Commencing active scan... 🔥")
             active_scan_results = self._active_scan()
             results['active_scan'] = self._organize_alerts(active_scan_results)
@@ -136,9 +134,3 @@ class OwaspSecurityScanner:
                 "solution": alert['solution']
             })
         return organized_alerts
-
-if __name__ == "__main__":
-    target_url = "http://192.168.11.130:8899/reflected_xss.php"
-    custom_proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
-    spider = OwaspSecurityScanner(target_url, proxies=custom_proxies)
-    scan_results = spider.perform_full_scan()

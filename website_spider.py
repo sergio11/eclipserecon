@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 from pyvis.network import Network
 from scrapy.crawler import CrawlerProcess
 
+
 class WebsiteStructureSpider(scrapy.Spider):
     """
     A Scrapy Spider for mapping the structure of a website.
@@ -15,14 +16,18 @@ class WebsiteStructureSpider(scrapy.Spider):
         tree (networkx.DiGraph): A directed graph representing the website's structure.
     """
     name = "website_structure"
-    allowed_domains = ["192.168.11.130"]
-    start_urls = ["http://192.168.11.130:8899/a1.html"]
 
-    def __init__(self):
+    def __init__(self, allowed_domains=None, start_urls=None):
         """
-        Initializes the spider and creates a directed graph to store the website structure.
+        Initializes the spider with custom allowed domains and start URLs.
+
+        Args:
+            allowed_domains (list, optional): List of domains allowed for crawling. Defaults to an empty list.
+            start_urls (list, optional): List of starting URLs for the spider. Defaults to an empty list.
         """
         super().__init__()
+        self.allowed_domains = allowed_domains or []
+        self.start_urls = start_urls or []
         self.tree = nx.DiGraph()
 
     def parse(self, response):
@@ -78,16 +83,18 @@ class WebsiteStructureSpider(scrapy.Spider):
         # Save the graph to an HTML file
         net.save_graph(output_file)
 
-def run_spider():
+
+def run_spider(allowed_domains, start_urls):
     """
     Runs the WebsiteStructureSpider programmatically without using the CLI.
+
+    Args:
+         allowed_domains (list): List of allowed domains for the spider.
+        start_urls (list): List of starting URLs for the spider.
     """
     process = CrawlerProcess(settings={
-        "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
-        "LOG_LEVEL": "INFO",
+          "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+         "LOG_LEVEL": "ERROR",
     })
-    process.crawl(WebsiteStructureSpider)
+    process.crawl(WebsiteStructureSpider, allowed_domains=allowed_domains, start_urls=start_urls)
     process.start()
-
-if __name__ == "__main__":
-    run_spider()

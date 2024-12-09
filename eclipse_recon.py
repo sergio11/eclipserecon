@@ -1,7 +1,7 @@
 import re
 from subdomain_scanner import SubdomainScanner
 from vulnerability_scanner import WebVulnerabilityScanner
-from website_spider import WebsiteStructureSpider, run_spider
+from website_spider import run_spider
 from owasp_security_scanner import OwaspSecurityScanner
 from utils.logger import appLogger
 
@@ -87,15 +87,13 @@ class EclipseRecon:
 
         # If target is an IP, crawl it directly
         if self.is_ip:
-            WebsiteStructureSpider.allowed_domains = [self.target]
-            WebsiteStructureSpider.start_urls = [f"http://{self.target}/"]
-            run_spider()
+            appLogger.info(f"Running website spider for IP target: {self.target}")
+            run_spider(allowed_domains=[self.target], start_urls=[f"http://{self.target}/"])
             sitemap_files.append(f"{self.target}_sitemap.html")
         else:
             for subdomain, _ in subdomains:
-                WebsiteStructureSpider.allowed_domains = [subdomain]
-                WebsiteStructureSpider.start_urls = [f"http://{subdomain}/"]
-                run_spider()
+                appLogger.info(f"Running website spider for subdomain: {subdomain}")
+                run_spider(allowed_domains=[subdomain], start_urls=[f"http://{subdomain}/"])
                 sitemap_files.append(f"{subdomain}_sitemap.html")
         
         self.results['sitemaps'] = sitemap_files
@@ -142,7 +140,7 @@ class EclipseRecon:
 
 if __name__ == "__main__":
     recon = EclipseRecon(
-        target="192.168.11.130",  # Change to a domain or IP as needed
+        target="192.168.11.130:8080",  # Change to a domain or IP as needed
         scan_depth="test",
         ipv6=False,
         threads=10,
