@@ -1,6 +1,6 @@
-# 🕸️ Ethical Hacking Tool: NetSleuth - Spidering & Crawling with Python 🛠️
+# EclipseRecon: 🌑 Unveiling the Shadows of the Web 🌐
 
-Welcome to **NetSleuth**, an ethical hacking tool designed for security professionals and researchers to perform **web spidering and crawling** with Python. It’s built to map websites, discover useful information, and identify potential vulnerabilities. 🚀
+EclipseRecon is a powerful and stealthy web reconnaissance tool designed to uncover hidden vulnerabilities, subdomains, and intricate site structures that may otherwise remain in the dark. 🕵️‍♂️💻 Using advanced scanning techniques, EclipseRecon enables security professionals to perform thorough assessments of web applications, revealing critical attack surfaces with precision. 🚨🔍 Whether you're conducting penetration testing, vulnerability assessments, or preparing for a cyber defense, EclipseRecon ensures you're always one step ahead in identifying weak spots before malicious actors can exploit them. 🔐💥 With its dark, investigative approach, EclipseRecon helps you stay ahead of potential threats and secure your digital environment.
 
 > ⚠️ **Disclaimer**: This tool is intended for ethical hacking and educational purposes only. Always ensure you have authorization before testing any systems.
 
