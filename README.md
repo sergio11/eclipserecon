@@ -72,8 +72,5 @@ We welcome contributions from the community! Feel free to submit issues, feature
 ## 🛡 Disclaimer
 EclipseRecon is intended for **authorized security testing and educational purposes only**. Misuse of this tool for illegal activities is strictly prohibited and may lead to severe penalties.
 
-## 📬 Contact
-For questions or support, reach out to us at [support@eclipserecon.com](mailto:support@eclipserecon.com).
-
 
 
