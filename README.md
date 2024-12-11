@@ -173,6 +173,11 @@ The author of EclipseRecon is not responsible for any misuse or damage caused by
 
 🙏 I would like to express my sincere gratitude to [Santiago Hernández, a leading expert in Cybersecurity and Artificial Intelligence](https://www.udemy.com/user/shramos/). His outstanding course on **Cybersecurity and Ethical Hacking**, available on Udemy, was instrumental in the development of this project. The insights and techniques I gained from his course were invaluable in guiding my approach to cybersecurity practices. Thank you for sharing your knowledge and expertise!
 
+EclipseRecon extends its gratitude to the creators and maintainers of the [SecLists](https://github.com/danielmiessler/SecLists) repository. SecLists has been an invaluable resource for security practitioners, offering an extensive collection of lists, including usernames, passwords, sensitive data patterns, fuzzing payloads, and subdomain dictionaries. These resources have significantly contributed to the capabilities of EclipseRecon, particularly in tasks such as fuzzing and subdomain scanning.  
+
+Special thanks to **Daniel Miessler**, **Jason Haddix**, and **g0tmi1k** for their dedication to maintaining and expanding this essential tool for the cybersecurity community. Your work empowers ethical hackers and security analysts worldwide to perform more efficient and comprehensive assessments. 🙌  
+
+
 ## 🤝 **Contributing**
 Contributions to EclipseRecon are highly encouraged! If you're interested in adding new features, resolving bugs, or enhancing the project's functionality, please feel free to submit pull requests.
 
