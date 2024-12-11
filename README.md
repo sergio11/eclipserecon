@@ -52,19 +52,59 @@ Here’s a step-by-step breakdown of what EclipseRecon does:
    - Compiles results into PDF and JSON reports.
    - Uses the `SecurityAnalyzer` to generate professional-grade reports.
 
-## 🚀 Getting Started
-1. Clone the repository.
-   ```bash
-   git clone https://github.com/your-repo/eclipse-recon.git
-   ```
-2. Install dependencies.
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the tool with your desired configuration.
-   ```bash
-   python eclipse_recon.py
-   ```
+## 🌐 EclipseRecon CLI Options & Usage
+
+EclipseRecon is a powerful tool for reconnaissance and security analysis of websites and IP addresses. Below is a breakdown of the available options for the command-line interface (CLI).
+
+### 📝 Available Options:
+
+### 1. `--target` (Required) 🌍
+**Description**: The target domain or IP address that you want to scan. This is a required argument and must be provided.
+
+### 2. `--scan_depth` (Optional) 🔍
+**Description**: Set the depth of the subdomain scanning. You can choose from the following options:
+- `test`: Basic scan for subdomains.
+- `basic`: A deeper scan than `test`, but not as extensive.
+- `normal`: A balanced scan (default).
+- `deep`: Full-depth scan for all possible subdomains.
+
+**Default**: `normal`
+
+### 3. `--ipv6` (Optional) 🌐
+**Description**: Enable scanning of IPv6 addresses (default is IPv4). Use this option if you want to scan for IPv6 addresses.
+
+### 4. `--threads` (Optional) ⚡
+**Description**: Define the number of threads to use for scanning. More threads will speed up the process but may consume more resources.
+
+**Default**: `10`
+
+### 5. `--proxies` (Optional) 🔒
+**Description**: Set a proxy for the OWASP security scanner to route traffic through a proxy server (e.g., for anonymity or bypassing firewalls).
+
+### 6. `--pdf_report` (Optional) 📄
+**Description**: Path to save the PDF security report. If not specified, the report will be saved with the default name `security_report.pdf`.
+
+### 7. `--json_report` (Optional) 📊
+**Description**: Path to save the JSON security report. If not specified, the report will be saved with the default name `security_report.json`.
+
+### 8. `--version` (Optional) ℹ️
+**Description**: Displays the version of EclipseRecon.
+
+### 📋 Summary of CLI Options
+
+| Option            | Description                                                   | Default               |
+|-------------------|---------------------------------------------------------------|-----------------------|
+| `--target`        | The target domain or IP address to scan.                      | Required              |
+| `--scan_depth`    | Subdomain scan depth: `test`, `basic`, `normal`, `deep`.       | `normal`              |
+| `--ipv6`          | Enable IPv6 scanning (optional).                              | Disabled              |
+| `--threads`       | Number of threads for scanning (default is 10).               | `10`                  |
+| `--proxies`       | Proxy settings for the OWASP scanner.                         | None                  |
+| `--pdf_report`    | Path to save the PDF security report.                         | `security_report.pdf` |
+| `--json_report`   | Path to save the JSON security report.                        | `security_report.json`|
+| `--version`       | Displays the version of EclipseRecon.                         | None                  |
+
+
+Now you can use these options to scan websites or IP addresses for vulnerabilities, subdomains, OWASP security issues, and more. 🚀
 
 ## 🤝 Contributing
 We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests to help improve EclipseRecon.
