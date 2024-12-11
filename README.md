@@ -33,30 +33,55 @@ If you're passionate about ethical hacking and want to elevate your cybersecurit
 These tools are designed to streamline penetration testing, enhance security assessments, and provide in-depth insights into vulnerabilities. Explore them to level up your ethical hacking skills! 💻🔍
 
 ## 🎯 Purpose
-The primary objective of EclipseRecon is to assist ethical hackers and security analysts in:
+EclipseRecon is designed to empower ethical hackers, security analysts, and penetration testers with the tools to:
 
-- Discovering hidden subdomains.
-- Scanning for common vulnerabilities.
-- Crawling websites for security insights.
-- Performing OWASP-compliant security analysis.
-- Generating comprehensive security reports.
+- 🕵️‍♂️ **Discover Hidden Subdomains**: Uncover subdomains that could expose critical attack surfaces.
+- 🔒 **Scan for Vulnerabilities**: Identify common vulnerabilities that might put your web assets at risk.
+- 🌐 **Crawl Websites**: Map out websites and gain valuable security insights from their structure.
+- 🚨 **OWASP-Compliant Security Analysis**: Perform in-depth security checks based on OWASP's top security practices.
+- 📊 **Generate Comprehensive Reports**: Create detailed PDF and JSON reports for easy sharing and analysis.
 
-By consolidating multiple scanning methodologies, EclipseRecon saves time and enhances accuracy during penetration testing and security assessments.
+By streamlining multiple scanning techniques, EclipseRecon helps save time, increase precision, and enhance overall efficiency during security assessments and penetration testing.
 
 ## 🛠 Features
-- **Subdomain Scanning**: Discover subdomains to map the attack surface.
-- **Vulnerability Analysis**: Detect common vulnerabilities across web assets.
-- **Website Crawling**: Generate sitemaps and analyze website structure.
-- **OWASP Testing**: Perform advanced security checks aligned with OWASP standards.
-- **Detailed Reporting**: Export results as PDF and JSON reports for further analysis.
+- 🌍 **Subdomain Scanning**: Quickly discover subdomains to get a broader view of the attack surface.
+- 🔧 **Vulnerability Analysis**: Detect security weaknesses in web applications and associated resources.
+- 🧭 **Website Crawling**: Automatically crawl websites and generate sitemaps to analyze the site's structure.
+- 📋 **OWASP Testing**: Conduct robust security testing in line with the OWASP security testing methodology.
+- 📝 **Detailed Reporting**: Export your findings in easy-to-read PDF and JSON formats for in-depth analysis and reporting.
+
+## 🔧💻 Requirements
+
+To run EclipseRecon, make sure you have the following dependencies installed:
+
+- 🐍 **Python 3.8+**: Required for running EclipseRecon scripts and managing dependencies.
+- 🌐 **colorama==0.4.6**: Used for adding colored output to the console for better readability.
+- 🔍 **dnspython==2.7.0**: DNS toolkit for subdomain scanning and resolution.
+- ⏳ **tqdm==4.67.1**: Progress bar for tracking scanning and crawling processes.
+- 🌐 **aiohttp==3.11.9**: HTTP client/server library for asynchronous web crawling and scanning.
+- 📊 **pyvis==0.3.2**: Visualization library for creating interactive network graphs of subdomains and vulnerabilities.
+- 🕸️ **scrapy==2.12.0**: Web scraping framework for crawling websites and generating sitemaps.
+- 🔐 **zaproxy==0.3.2**: Used for automated vulnerability scanning and OWASP-compliant security testing.
+- 🗝️ **python-dotenv==1.0.1**: For managing environment variables, particularly for proxy settings.
+- 🧠 **langchain==0.2.16**: For handling advanced language models and AI-based security analysis.
+- 🤖 **langchain-groq==0.1.10**: Integration with Groq's AI model for cloud-based processing.
+- 📄 **fpdf2==2.8.1**: Library for generating PDF reports from scan results.
+- 🧩 **langchain-community==0.2.13**: For enhanced community-driven features in LangChain.
+- 🧠 **langchain-huggingface==0.0.3**: For integrating HuggingFace embeddings into the security analysis workflow.
+- 🔍 **faiss-cpu==1.9.0**: For performing efficient similarity search and retrieval in the analysis process.
+
+Make sure to install these dependencies using `pip install -r requirements.txt` to get started!
 
 ## 🌍 Practical Use Cases
-EclipseRecon is ideal for:
 
-1. **Penetration Testing**: Quickly enumerate assets and identify weaknesses in a target's infrastructure.
-2. **Bug Bounty Hunting**: Identify hidden entry points and vulnerabilities in target systems.
-3. **Security Auditing**: Analyze and report on an organization's digital footprint.
-4. **Compliance Checks**: Perform OWASP-based analysis to ensure security compliance.
+EclipseRecon empowers cybersecurity professionals with versatile applications, including:
+
+1. 🛡️ **Penetration Testing**: Streamline asset enumeration and uncover weaknesses in target infrastructures with precision.  
+2. 🪲 **Bug Bounty Hunting**: Participate in bug bounty programs—initiatives where organizations reward security researchers for identifying and responsibly reporting vulnerabilities in their systems. EclipseRecon helps you uncover hidden entry points, subdomains, and weaknesses to enhance your findings.  
+3. 📊 **Security Auditing**: Conduct comprehensive digital footprint analysis and generate detailed reports to assess an organization's security posture.  
+4. ✅ **Compliance Checks**: Perform in-depth evaluations aligned with **OWASP** (Open Web Application Security Project) standards, a globally recognized framework for identifying and mitigating the most critical security risks in web applications. EclipseRecon ensures your systems meet the necessary benchmarks for security compliance.  
+
+Whether you're a penetration tester, bug bounty hunter, or security analyst, EclipseRecon is your go-to tool for effective reconnaissance and vulnerability discovery. 🚀
 
 ## 📋 Workflow
 Here’s a step-by-step breakdown of what EclipseRecon does:
