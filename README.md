@@ -2,7 +2,19 @@
 
 EclipseRecon is a powerful and stealthy web reconnaissance tool designed to uncover hidden vulnerabilities, subdomains, and intricate site structures that may otherwise remain in the dark. 🕵️‍♂️💻 Using advanced scanning techniques, EclipseRecon enables security professionals to perform thorough assessments of web applications, revealing critical attack surfaces with precision. 🚨🔍 Whether you're conducting penetration testing, vulnerability assessments, or preparing for a cyber defense, EclipseRecon ensures you're always one step ahead in identifying weak spots before malicious actors can exploit them. 🔐💥 With its dark, investigative approach, EclipseRecon helps you stay ahead of potential threats and secure your digital environment.
 
+🙏 I would like to express my sincere gratitude to [Santiago Hernández, a leading expert in Cybersecurity and Artificial Intelligence](https://www.udemy.com/user/shramos/). His outstanding course on **Cybersecurity and Ethical Hacking**, available on Udemy, was instrumental in the development of this project. The insights and techniques I gained from his course were invaluable in guiding my approach to cybersecurity practices. Thank you for sharing your knowledge and expertise!
+
 > ⚠️ **Disclaimer**: This tool is intended for ethical hacking and educational purposes only. Always ensure you have authorization before testing any systems.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_1.PNG" />
+</p>
 
 ## 🎯 Purpose
 The primary objective of EclipseRecon is to assist ethical hackers and security analysts in:
