@@ -1,7 +1,7 @@
 import dns.resolver
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
-from utils.logger import appLogger
+from eclipserecon.utils.logger import appLogger
 import os
 
 class SubdomainScanner:
@@ -104,8 +104,11 @@ class SubdomainScanner:
             appLogger.error(f"❌ Invalid scan depth: {self.scan_depth}")
             raise ValueError(f"Invalid scan depth: {self.scan_depth}. Choose from 'test', 'basic', 'normal', or 'deep'.")
 
-        selected_file = depth_mapping[self.scan_depth]
-        appLogger.info(f"📂 Selected wordlist: {selected_file}")
+        relative_path = depth_mapping[self.scan_depth]
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        selected_file = os.path.join(current_directory, relative_path)
+    
+        appLogger.info(f"📂 Selected wordlist: {relative_path}")
         return self._load_file(selected_file)
 
     def _load_file(self, path):
@@ -121,7 +124,6 @@ class SubdomainScanner:
         Raises:
             FileNotFoundError: If the file cannot be opened.
         """
-        appLogger.info(f"📂 Loading file: {path}")
         if not os.path.exists(path):
             appLogger.error(f"❌ File not found: {path}")
             raise FileNotFoundError(f"File not found: {path}")
@@ -147,16 +149,19 @@ class SubdomainScanner:
         resolver.timeout = 1
         resolver.lifetime = 1
 
-        # If resolver_list is not provided, use the default nameservers file
         if resolver_list is None:
             resolver_list = "assets/dns/nameservers.txt"
             appLogger.info(f"📜 Using default nameservers file: {resolver_list}")
 
-        if not os.path.exists(resolver_list):
-            appLogger.error(f"❌ Unable to read nameservers file: {resolver_list}")
-            raise FileNotFoundError(f"Unable to read nameservers file: {resolver_list}")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        resolver_list_path = os.path.join(current_directory, resolver_list)
+        appLogger.info(f"📂 Trying to load nameservers file")
 
-        with open(resolver_list, 'r') as file:
+        if not os.path.exists(resolver_list_path):
+            appLogger.error(f"❌ Unable to read nameservers file: {resolver_list_path}")
+            raise FileNotFoundError(f"Unable to read nameservers file: {resolver_list_path}")
+
+        with open(resolver_list_path, 'r') as file:
             resolver.nameservers = file.read().splitlines()
 
         return resolver

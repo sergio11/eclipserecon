@@ -1,26 +1,65 @@
 from langchain_groq import ChatGroq
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter
 from fpdf import FPDF
 import json
-from utils.logger import appLogger
+import os
+from dotenv import load_dotenv
+from eclipserecon.utils.logger import appLogger
 
 class SecurityAnalyzer:
     """
-    Analyzes security scan data using RAG and generates detailed security reports with actionable insights.
+    SecurityAnalyzer is a class designed to analyze security scan results using Retrieval-Augmented Generation (RAG) 
+    and generate detailed security reports with actionable insights. This class integrates with Groq's Chat API for 
+    advanced analysis and leverages FAISS for efficient document retrieval.
+
+    Attributes:
+        model (ChatGroq): A Groq language model instance for generating insights and analyses.
+        embeddings (HuggingFaceEmbeddings): Embedding model used for text representation.
     """
     
-    def __init__(self, model_id="llama3-70b-8192", groq_api_key=None):
-        if not groq_api_key:
-            raise ValueError("Groq API key is required.")
+    def __init__(self):
+        """
+        Initializes the SecurityAnalyzer class by loading the Groq API key and model ID from environment variables 
+        and configuring the necessary components (Groq model and HuggingFace embeddings) for security analysis.
 
-        self.model = ChatGroq(model=model_id, temperature=0.5, api_key=groq_api_key)
+        This method ensures that both the Groq API key and model ID are available in the environment variables.
+        If not, an error will be raised.
+
+        Raises:
+            ValueError: If the Groq API key or model ID is not found in the environment variables.
+        """
+        load_dotenv()
+
+        groq_api_key = os.getenv("GROQ_API_KEY")
+        model_id = os.getenv("MODEL_ID")
+
+        if not groq_api_key or not model_id:
+            raise ValueError("GROQ API key and Model ID are required. Ensure they are defined in the .env file.")
+
+        self.model = ChatGroq(model=model_id, temperature=1, api_key=groq_api_key)
         self.embeddings = HuggingFaceEmbeddings()
         appLogger.info("🔥 Groq model initialized successfully! Ready to roll. 💻")
 
     def generate_report(self, scan_results: dict, pdf_path="security_report.pdf", json_path="security_report.json"):
+        """
+        Generates a detailed security report based on the scan results. The report includes actionable insights, 
+        vulnerability analysis, and recommendations for improving security.
+
+        The method processes the scan results, generates a retrieval-based chain using the Groq model for 
+        analysis, and creates both a PDF and a JSON report.
+
+        Args:
+            scan_results (dict): A dictionary containing the scan results, where each key represents a type of alert 
+                                  and each value is a list of alerts for that type.
+            pdf_path (str, optional): Path where the generated PDF report will be saved. Defaults to "security_report.pdf".
+            json_path (str, optional): Path where the generated JSON report will be saved. Defaults to "security_report.json".
+
+        Returns:
+            str: A message indicating whether the report generation was successful or if an error occurred.
+        """
         try:
             appLogger.debug("🔍 Splitting scan results into manageable chunks...")
             chunks = self._process_scan_results(scan_results)
@@ -34,7 +73,7 @@ class SecurityAnalyzer:
             report = self._generate_report_prompt()
 
             appLogger.info("🤖 Running the analysis with retrieval chain...")
-            result = chain.run(report)
+            result = chain.invoke(report)
 
             self._generate_pdf_report(result, pdf_path)
             self._generate_json_report(result, json_path)
@@ -47,6 +86,17 @@ class SecurityAnalyzer:
             return f"Error during report generation: {e}"
 
     def _process_scan_results(self, scan_results):
+        """
+        Processes the raw scan results into text chunks suitable for analysis. Each type of alert is formatted and 
+        converted into a structured text format, which is then split into smaller chunks for processing.
+
+        Args:
+            scan_results (dict): A dictionary containing the scan results, where each key is a type of alert and 
+                                  each value is a list of alerts for that type.
+
+        Returns:
+            list: A list of text documents representing the processed scan results, split into manageable chunks.
+        """
         scan_text = ""
         for alert_type, alerts in scan_results.items():
             scan_text += f"{alert_type.upper()}:\n"
@@ -60,6 +110,13 @@ class SecurityAnalyzer:
         return text_splitter.create_documents([scan_text])
 
     def _generate_report_prompt(self):
+        """
+        Generates the prompt to be used by the Groq model for generating a detailed security report. The prompt 
+        instructs the model to analyze the scan results and produce a comprehensive report with actionable insights.
+
+        Returns:
+            str: The prompt used for generating the security report.
+        """
         return (
             "You are an AI cybersecurity expert analyzing a series of security scan results from OWASP ZAP. "
             "Your task is to generate a detailed, comprehensive security report based on the provided data. "
@@ -74,6 +131,13 @@ class SecurityAnalyzer:
         )
 
     def _generate_pdf_report(self, analysis, file_path="security_report.pdf"):
+        """
+        Generates a PDF report based on the analysis results and saves it to the specified file path.
+
+        Args:
+            analysis (dict): The analysis results containing actionable insights and findings.
+            file_path (str, optional): Path where the PDF report will be saved. Defaults to "security_report.pdf".
+        """
         try:
             pdf = FPDF()
             pdf.add_page()
@@ -81,15 +145,22 @@ class SecurityAnalyzer:
             pdf.cell(200, 10, txt="Security Vulnerability Report", ln=True, align='C')
             pdf.ln(10)
             pdf.set_font("Arial", size=12)
-            pdf.multi_cell(0, 10, txt=analysis)
+            pdf.multi_cell(0, 10, txt=analysis.get("results", ""))
             pdf.output(file_path)
             appLogger.info(f"📄 PDF report generated: {file_path}")
         except Exception as e:
             appLogger.error(f"⚠️ Error generating PDF report: {e}")
 
     def _generate_json_report(self, analysis, file_path="security_report.json"):
+        """
+        Generates a JSON report based on the analysis results and saves it to the specified file path.
+
+        Args:
+            analysis (dict): The analysis results containing actionable insights and findings.
+            file_path (str, optional): Path where the JSON report will be saved. Defaults to "security_report.json".
+        """
         try:
-            report_data = {"analysis": analysis}
+            report_data = {"analysis": analysis.get("results", "")}
             with open(file_path, 'w') as json_file:
                 json.dump(report_data, json_file, indent=4)
             appLogger.info(f"📂 JSON report generated: {file_path}")
