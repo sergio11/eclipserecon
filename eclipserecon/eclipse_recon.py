@@ -5,6 +5,7 @@ from eclipserecon.core.website_spider import run_spider
 from eclipserecon.core.owasp_security_scanner import OwaspSecurityScanner
 from eclipserecon.utils.logger import appLogger
 from eclipserecon.core.security_analyzer import SecurityAnalyzer
+from eclipserecon import __version__
 
 class EclipseRecon:
     """
@@ -47,6 +48,7 @@ class EclipseRecon:
             threads (int): The number of threads to use for parallel scanning. Defaults to 10.
             proxies (dict, optional): A dictionary of proxy settings to use for OWASP scanner. Defaults to None.
         """
+        self._print_banner()
         self.target = target
         self.subdomainScanner = SubdomainScanner(
             domain=target,
@@ -83,35 +85,39 @@ class EclipseRecon:
         Returns:
             None: The method saves the security reports at the specified paths.
         """
-        appLogger.info("⏳ Starting EclipseRecon workflow...")
+        try:
+            appLogger.info("⏳ Starting EclipseRecon workflow...")
 
-        results = {}
+            results = {}
 
-        subdomains = self._run_subdomain_scanner()
-        if not self.is_ip:
-            appLogger.info(f"🌐 Found {len(subdomains)} subdomains.")
+            subdomains = self._run_subdomain_scanner()
+            if not self.is_ip:
+                appLogger.info(f"🌐 Found {len(subdomains)} subdomains.")
 
-        vulnerabilities = self._run_vulnerability_scanner(subdomains if not self.is_ip else None)
-        appLogger.info(f"🔒 Detected vulnerabilities in {len(vulnerabilities)} targets.")
+            vulnerabilities = self._run_vulnerability_scanner(subdomains if not self.is_ip else None)
+            appLogger.info(f"🔒 Detected vulnerabilities in {len(vulnerabilities)} targets.")
 
-        sitemaps = self._run_website_spider(subdomains if not self.is_ip else None)
-        appLogger.info(f"🖋️ Generated sitemaps for {len(sitemaps)} targets.")
+            sitemaps = self._run_website_spider(subdomains if not self.is_ip else None)
+            appLogger.info(f"🖋️ Generated sitemaps for {len(sitemaps)} targets.")
 
-        owasp_results = self._run_owasp_scanner(subdomains if not self.is_ip else None)
-        appLogger.info(f"🏠 Completed OWASP analysis on {len(owasp_results)} targets.")
+            owasp_results = self._run_owasp_scanner(subdomains if not self.is_ip else None)
+            appLogger.info(f"🏠 Completed OWASP analysis on {len(owasp_results)} targets.")
 
-        results['subdomains'] = subdomains
-        results['vulnerabilities'] = vulnerabilities
-        results['sitemaps'] = sitemaps
-        results['owasp'] = owasp_results
+            results['subdomains'] = subdomains
+            results['vulnerabilities'] = vulnerabilities
+            results['sitemaps'] = sitemaps
+            results['owasp'] = owasp_results
 
-        if results:
-            self._generate_security_report(
-                results=results,
-                pdf_path=pdf_path,
-                json_path=json_path
-            )
+            if results:
+                self._generate_security_report(
+                    results=results,
+                    pdf_path=pdf_path,
+                    json_path=json_path
+                )
 
+        except KeyboardInterrupt:
+            appLogger.info("⚠️ Execution interrupted by user. Cleaning up...")
+            appLogger.info("🛑 Process terminated successfully.")
 
     @staticmethod
     def _is_valid_ip(target):
@@ -127,7 +133,7 @@ class EclipseRecon:
         ip_regex = re.compile(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
         return bool(ip_regex.match(target))
 
-        def _run_subdomain_scanner(self):
+    def _run_subdomain_scanner(self):
         """
         Initiates the subdomain scanning process if the target is a domain (not an IP address).
         This method uses the `SubdomainScanner` to discover subdomains for the target domain.
@@ -159,12 +165,12 @@ class EclipseRecon:
 
         if self.is_ip:
             self.vul_scanner.base_url = f"http://{self.target}/FUZZ"
-            vulnerabilities[self.target] = self.vul_scanner.start_scan(max_concurrent_requests=10)
+            vulnerabilities[self.target] = self.vul_scanner.start_scan(max_concurrent_requests=5)
             appLogger.info(f"🔒 Vulnerability scan completed for IP {self.target}.")
         else:
             for subdomain, _ in subdomains:
                 self.vul_scanner.base_url = f"http://{subdomain}/FUZZ"
-                vulnerabilities[subdomain] = self.vul_scanner.start_scan(max_concurrent_requests=10)
+                vulnerabilities[subdomain] = self.vul_scanner.start_scan(max_concurrent_requests=5)
                 appLogger.info(f"🔒 Vulnerability scan completed for subdomain {subdomain}.")
         return vulnerabilities
 
@@ -241,3 +247,20 @@ class EclipseRecon:
             appLogger.info(f"✅ Report generated successfully: {message}")
         except Exception as e:
             appLogger.error(f"❌ Failed to generate security report: {e}")
+
+    def _print_banner(self):
+        """
+        Prints a welcome banner at the start of the program for EclipseRecon.
+        """
+        banner = f"""
+        ███████╗ ██████╗██╗     ██╗██████╗ ███████╗███████╗██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
+        ██╔════╝██╔════╝██║     ██║██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
+        █████╗  ██║     ██║     ██║██████╔╝███████╗█████╗  ██████╔╝█████╗  ██║     ██║   ██║██╔██╗ ██║
+        ██╔══╝  ██║     ██║     ██║██╔═══╝ ╚════██║██╔══╝  ██╔══██╗██╔══╝  ██║     ██║   ██║██║╚██╗██║
+        ███████╗╚██████╗███████╗██║██║     ███████║███████╗██║  ██║███████╗╚██████╗╚██████╔╝██║ ╚████║
+        ╚══════╝ ╚═════╝╚══════╝╚═╝╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝                                                                                                                                                                                                                                                        
+        EclipseRecon: Advanced Ethical Hacking for Web Security Assessment  (Version: {__version__})
+        """
+        print(banner)
+
+
