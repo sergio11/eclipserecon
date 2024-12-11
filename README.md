@@ -18,6 +18,20 @@ EclipseRecon is a powerful and stealthy web reconnaissance tool designed to unco
   <img src="doc/screenshots/picture_1.PNG" />
 </p>
 
+## 🌟 **Explore My Other Open-Source Ethical Hacking Tools**
+
+If you're passionate about ethical hacking and want to elevate your cybersecurity toolkit, make sure to explore my suite of open-source projects. These tools are designed to empower penetration testers and cybersecurity professionals by streamlining complex tasks, enhancing security audits, and uncovering vulnerabilities with cutting-edge precision:
+
+- [🦅 **NetHawk**](https://github.com/sergio11/nethawk_analyzer): A state-of-the-art **AI-powered ethical hacking tool** for **network vulnerability assessment**. Using advanced frameworks like **Scapy** and **Nmap**, NetHawk automates **port scanning**, **vulnerability detection**, and **report generation**, making security audits faster, smarter, and more efficient. Whether you're a **network administrator**, **cybersecurity expert**, or **ethical hacker**, NetHawk simplifies the assessment process and offers actionable insights to fortify your systems.  
+- [💀 **Nemesys**](https://github.com/sergio11/nemesys): An advanced **exploitation** and **post-exploitation** tool built on top of the **Metasploit Framework** for automating critical data harvesting and system enumeration.
+- [🕷️ **BlackVenom**](https://github.com/sergio11/blackvenom): The ultimate **ARP** and **DNS spoofing** tool, designed to intercept network traffic and uncover vulnerabilities with stealth and precision. A must-have for identifying and mitigating **network-level threats**.  
+
+- [🌐 **ZeroTrace**](https://github.com/sergio11/zero_trace_hacking_tool): A robust **search engine dorking** tool for identifying potential **attack vectors** and locating **sensitive exposed information** across the web. Perfect for cybersecurity professionals aiming to enhance reconnaissance during penetration testing.  
+
+- [🔐 **DecryptX**](https://github.com/sergio11/decryptx): An **advanced hash and password security assessment tool** that empowers you to analyze **password hashes**, **encrypted ZIP files**, and more. Ideal for evaluating the strength of encryption and identifying weaknesses in **security implementations**.  
+
+These tools are designed to streamline penetration testing, enhance security assessments, and provide in-depth insights into vulnerabilities. Explore them to level up your ethical hacking skills! 💻🔍
+
 ## 🎯 Purpose
 The primary objective of EclipseRecon is to assist ethical hackers and security analysts in:
 
