@@ -56,7 +56,10 @@ class EclipseRecon:
             ipv6=ipv6,
             threads=threads
         )
-        self.vul_scanner = WebVulnerabilityScanner(base_url="http://FUZZ")
+        self.vul_scanner = WebVulnerabilityScanner(
+            base_url="http://FUZZ",
+            scan_depth=scan_depth
+        )
         self.owasp_scanner = OwaspSecurityScanner(proxies=proxies)
         self.security_analyzer = SecurityAnalyzer()
         self.is_ip = self._is_valid_ip(target)
@@ -165,12 +168,12 @@ class EclipseRecon:
 
         if self.is_ip:
             self.vul_scanner.base_url = f"http://{self.target}/FUZZ"
-            vulnerabilities[self.target] = self.vul_scanner.start_scan(max_concurrent_requests=5)
+            vulnerabilities[self.target] = self.vul_scanner.start_scan(max_concurrent_requests=10)
             appLogger.info(f"🔒 Vulnerability scan completed for IP {self.target}.")
         else:
             for subdomain, _ in subdomains:
                 self.vul_scanner.base_url = f"http://{subdomain}/FUZZ"
-                vulnerabilities[subdomain] = self.vul_scanner.start_scan(max_concurrent_requests=5)
+                vulnerabilities[subdomain] = self.vul_scanner.start_scan(max_concurrent_requests=10)
                 appLogger.info(f"🔒 Vulnerability scan completed for subdomain {subdomain}.")
         return vulnerabilities
 
