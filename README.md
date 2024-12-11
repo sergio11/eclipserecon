@@ -6,6 +6,8 @@ EclipseRecon is a powerful and stealthy web reconnaissance tool designed to unco
 
 > ⚠️ **Disclaimer**: This tool is intended for ethical hacking and educational purposes only. Always ensure you have authorization before testing any systems.
 
+> ⚠️ All tests and security analysis workflows in **EclipseRecon** were conducted in a controlled environment using deliberately vulnerable websites based on the VPLE (Vulnerable Web Platform for Learning and Exploitation) virtual machine, which is designed specifically for security testing and training purposes. This testing was carried out in a dedicated **lab environment** to ensure ethical use and avoid unauthorized access to any external systems. The results of these tests demonstrate the tool’s effectiveness in identifying vulnerabilities in a controlled, safe, and legal environment.
+> 
 <p align="center">
   <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
   <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" />
@@ -118,11 +120,16 @@ EclipseRecon is a powerful tool for reconnaissance and security analysis of webs
 
 Now you can use these options to scan websites or IP addresses for vulnerabilities, subdomains, OWASP security issues, and more. 🚀
 
-## 🤝 Contributing
-We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests to help improve EclipseRecon.
+## ⚠️ Disclaimer
 
-## 🛡 Disclaimer
-EclipseRecon is intended for **authorized security testing and educational purposes only**. Misuse of this tool for illegal activities is strictly prohibited and may lead to severe penalties.
+**EclipseRecon is designed as a security testing and reconnaissance tool** for ethical hacking and vulnerability analysis. Its main purpose is to automate the process of discovering subdomains, identifying vulnerabilities, performing OWASP security checks, and generating detailed reports based on the gathered insights. **EclipseRecon is intended for ethical and authorized use only**. Unauthorized use may result in severe legal consequences. Always ensure that you have proper authorization and are conducting your activities in a controlled, legal, and ethical environment, such as a lab setup or with explicit permission to use this tool on any system.
+
+All tests and security analysis workflows in **EclipseRecon** were conducted in a controlled environment using deliberately vulnerable websites based on the VPLE (Vulnerable Web Platform for Learning and Exploitation) virtual machine, which is designed specifically for security testing and training purposes. This testing was carried out in a dedicated **lab environment** to ensure ethical use and avoid unauthorized access to any external systems. The results of these tests demonstrate the tool’s effectiveness in identifying vulnerabilities in a controlled, safe, and legal environment.
+
+## 🛡️ Legal
+
+The author of EclipseRecon is not responsible for any misuse or damage caused by this tool. Use responsibly and comply with all local laws.
+
 
 
 
