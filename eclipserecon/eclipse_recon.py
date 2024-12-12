@@ -125,16 +125,29 @@ class EclipseRecon:
     @staticmethod
     def _is_valid_ip(target):
         """
-        Determines if the target is a valid IPv4 address.
+        Determines if the target is a valid IPv4 address, optionally with a port.
 
         Args:
             target (str): The target string to validate.
 
         Returns:
-            bool: True if the target is a valid IPv4 address, False otherwise.
+            bool: True if the target is a valid IPv4 address (with or without a port), False otherwise.
         """
-        ip_regex = re.compile(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-        return bool(ip_regex.match(target))
+        ip_with_port_regex = re.compile(
+            r"^((25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\.){3}"
+            r"(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})(:\d{1,5})?$"
+        )
+        
+        match = ip_with_port_regex.match(target)
+        if not match:
+            return False
+
+        if ":" in target:
+            _, port = target.rsplit(":", 1)
+            if not (1 <= int(port) <= 65535):
+                return False
+
+        return True
 
     def _run_subdomain_scanner(self):
         """
