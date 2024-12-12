@@ -50,6 +50,14 @@ By streamlining multiple scanning techniques, EclipseRecon helps save time, incr
 - 📋 **OWASP Testing**: Conduct robust security testing in line with the OWASP security testing methodology.
 - 📝 **Detailed Reporting**: Export your findings in easy-to-read PDF and JSON formats for in-depth analysis and reporting.
 
+<p align="center">
+  <img src="doc/screenshots/picture_8.PNG" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_2.PNG" />
+</p>
+
 ## 🔧💻 Requirements
 
 To run EclipseRecon, make sure you have the following dependencies installed:
@@ -72,6 +80,14 @@ To run EclipseRecon, make sure you have the following dependencies installed:
 
 Make sure to install these dependencies using `pip install -r requirements.txt` to get started!
 
+<p align="center">
+  <img src="doc/screenshots/picture_9.PNG" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_3.PNG" />
+</p>
+
 ## 🌍 Practical Use Cases
 
 EclipseRecon empowers cybersecurity professionals with versatile applications, including:
@@ -82,6 +98,14 @@ EclipseRecon empowers cybersecurity professionals with versatile applications, i
 4. ✅ **Compliance Checks**: Perform in-depth evaluations aligned with **OWASP** (Open Web Application Security Project) standards, a globally recognized framework for identifying and mitigating the most critical security risks in web applications. EclipseRecon ensures your systems meet the necessary benchmarks for security compliance.  
 
 Whether you're a penetration tester, bug bounty hunter, or security analyst, EclipseRecon is your go-to tool for effective reconnaissance and vulnerability discovery. 🚀
+
+<p align="center">
+  <img src="doc/screenshots/picture_10.PNG" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_4.PNG" />
+</p>
 
 ## 📋 Workflow
 Here’s a step-by-step breakdown of what EclipseRecon does:
@@ -158,6 +182,18 @@ EclipseRecon is a powerful tool for reconnaissance and security analysis of webs
 
 
 Now you can use these options to scan websites or IP addresses for vulnerabilities, subdomains, OWASP security issues, and more. 🚀
+
+<p align="center">
+  <img src="doc/screenshots/picture_5.PNG" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_6.PNG" />
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/picture_7.PNG" />
+</p>
 
 ## ⚠️ Disclaimer
 
