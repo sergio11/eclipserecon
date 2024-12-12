@@ -4,7 +4,6 @@ import logging
 class AppFormatter(logging.Formatter):
 
     FORMATS = {
-        logging.DEBUG: f"{Fore.CYAN}🐾 DEBUG: {Style.RESET_ALL}%(message)s",
         logging.INFO: f"{Fore.GREEN}💡 INFO: {Style.RESET_ALL}%(message)s",
         logging.WARNING: f"{Fore.YELLOW}⚠️ WARNING: {Style.RESET_ALL}%(message)s",
         logging.ERROR: f"{Fore.RED}❌ ERROR: {Style.RESET_ALL}%(message)s",
