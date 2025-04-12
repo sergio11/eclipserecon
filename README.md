@@ -1,6 +1,8 @@
 # EclipseRecon: 🌑 Unveiling the Shadows of the Web 🌐
 
-EclipseRecon is a powerful and stealthy web reconnaissance tool designed to uncover hidden vulnerabilities, subdomains, and intricate site structures that may otherwise remain in the dark. 🕵️‍♂️💻 Using advanced scanning techniques, EclipseRecon enables security professionals to perform thorough assessments of web applications, revealing critical attack surfaces with precision. 🚨🔍 Whether you're conducting penetration testing, vulnerability assessments, or preparing for a cyber defense, EclipseRecon ensures you're always one step ahead in identifying weak spots before malicious actors can exploit them. 🔐💥 With its dark, investigative approach, EclipseRecon helps you stay ahead of potential threats and secure your digital environment.
+EclipseRecon is an educational web reconnaissance tool developed as a practical exercise during a cybersecurity training course. 🧠🕵️‍♂️ Its main objective is to help learners understand how information gathering works in the context of ethical hacking and web application security. Through this project, key concepts such as subdomain enumeration, vulnerability discovery, and structural mapping of websites were explored in a hands-on manner. 💻🔍
+
+By applying real-world techniques in a controlled and legal environment, EclipseRecon provides an opportunity to reinforce theoretical knowledge with practical skills. Whether you're a student preparing for a role in cybersecurity or simply exploring ethical hacking practices, this tool aims to support your learning journey and deepen your understanding of how to assess and protect web environments. 🔐🎓
 
 🙏 I would like to express my sincere gratitude to [Santiago Hernández, a leading expert in Cybersecurity and Artificial Intelligence](https://www.udemy.com/user/shramos/). His outstanding course on **Cybersecurity and Ethical Hacking**, available on Udemy, was instrumental in the development of this project. The insights and techniques I gained from his course were invaluable in guiding my approach to cybersecurity practices. Thank you for sharing your knowledge and expertise!
 
@@ -20,36 +22,38 @@ EclipseRecon is a powerful and stealthy web reconnaissance tool designed to unco
 
 ## 🌟 **Explore My Other Open-Source Ethical Hacking Tools**
 
-If you're passionate about ethical hacking and want to elevate your cybersecurity toolkit, make sure to explore my suite of open-source projects. These tools are designed to empower penetration testers and cybersecurity professionals by streamlining complex tasks, enhancing security audits, and uncovering vulnerabilities with cutting-edge precision:
+If you're learning ethical hacking and looking for hands-on practice, check out my collection of open-source tools. These projects were developed as part of my personal learning journey in cybersecurity and are meant to help students, enthusiasts, and aspiring professionals practice real-world techniques in a safe and ethical way. 💻🧠
 
-- [🦅 **NetHawk**](https://github.com/sergio11/nethawk_analyzer): A state-of-the-art **AI-powered ethical hacking tool** for **network vulnerability assessment**. Using advanced frameworks like **Scapy** and **Nmap**, NetHawk automates **port scanning**, **vulnerability detection**, and **report generation**, making security audits faster, smarter, and more efficient. Whether you're a **network administrator**, **cybersecurity expert**, or **ethical hacker**, NetHawk simplifies the assessment process and offers actionable insights to fortify your systems.
-- [💀 **Nemesys**](https://github.com/sergio11/nemesys): An advanced **exploitation** and **post-exploitation** tool built on top of the **Metasploit Framework** for automating critical data harvesting and system enumeration.  
-- [🕷️ **BlackVenom**](https://github.com/sergio11/blackvenom): The ultimate **ARP** and **DNS spoofing** tool for **intercepting network traffic** and uncovering vulnerabilities with stealth and precision.  
-- [🌐 **ZeroTrace**](https://github.com/sergio11/zero_trace_hacking_tool): A powerful **search engine dorking** tool designed to identify **attack vectors** and uncover **exposed sensitive information** across the web.
-- 🔐 **DecryptX**: An **advanced hash and password security assessment tool** that empowers you to analyze **password hashes**, **encrypted ZIP files**, and more. Ideal for evaluating the strength of encryption and identifying weaknesses in **security implementations**.
-- [ 🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): is a stealthy web reconnaissance tool for uncovering hidden vulnerabilities, subdomains, and site structures. 🕵️‍♂️🔍 It empowers security professionals to identify critical attack surfaces with precision, ensuring proactive defense. 🚨💻
-- [ 🌐 **ZoneGuardian**](https://github.com/sergio11/zoneguardian): A powerful tool to analyze DNS configurations, detect vulnerabilities, and generate actionable security reports. 🔒🚀 Safeguard your digital assets with precision and ease!
-- **Retrospect**: A cutting-edge **reconnaissance and security analysis tool** that retrieves and analyzes historical web snapshots, helping you uncover past vulnerabilities and misconfigurations before they can be exploited today. Ideal for **ethical hackers** and **digital forensics experts**.
+Each tool focuses on a specific area of cybersecurity, offering an opportunity to explore and reinforce theoretical concepts through practical application:
 
-These tools are designed to streamline penetration testing, enhance security assessments, and provide in-depth insights into vulnerabilities. Explore them to level up your ethical hacking skills! 💻🔍
+- [🦅 **NetHawk**](https://github.com/sergio11/nethawk_analyzer): A learning-focused **AI-powered network scanning tool** for practicing **vulnerability assessments**. Built with **Scapy** and **Nmap**, it automates port scanning, vulnerability detection, and report generation to support hands-on training in network auditing.
+- [💀 **Nemesys**](https://github.com/sergio11/nemesys): An educational tool for exploring **exploitation** and **post-exploitation** concepts using the **Metasploit Framework**. Useful for understanding data collection and system enumeration techniques.
+- [🕷️ **BlackVenom**](https://github.com/sergio11/blackvenom): A tool for simulating **ARP and DNS spoofing attacks** to understand how network traffic interception and redirection work in practice.
+- [🌐 **ZeroTrace**](https://github.com/sergio11/zero_trace_hacking_tool): Designed to explore **search engine dorking** as a method for discovering **exposed sensitive data** and learning about public information gathering techniques.
+- 🔐 **DecryptX**: A project to experiment with **hash and password security analysis**, ideal for testing password cracking, ZIP decryption, and encryption evaluation in a controlled environment.
+- [🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): A web reconnaissance tool created to apply subdomain enumeration, vulnerability scanning, and site crawling as part of cybersecurity learning.
+- 🌐 **ZoneGuardian**: A DNS analysis tool developed to better understand how DNS misconfigurations can lead to security issues. Great for practicing DNS-related auditing.
+- **Retrospect**: A tool focused on **historical web reconnaissance**, allowing you to analyze past versions of websites to identify potential legacy vulnerabilities—ideal for digital forensics training.
 
 ## 🎯 Purpose
-EclipseRecon is designed to empower ethical hackers, security analysts, and penetration testers with the tools to:
 
-- 🕵️‍♂️ **Discover Hidden Subdomains**: Uncover subdomains that could expose critical attack surfaces.
-- 🔒 **Scan for Vulnerabilities**: Identify common vulnerabilities that might put your web assets at risk.
-- 🌐 **Crawl Websites**: Map out websites and gain valuable security insights from their structure.
-- 🚨 **OWASP-Compliant Security Analysis**: Perform in-depth security checks based on OWASP's top security practices.
-- 📊 **Generate Comprehensive Reports**: Create detailed PDF and JSON reports for easy sharing and analysis.
+**EclipseRecon** was developed as a practical project during a cybersecurity course to reinforce web reconnaissance techniques through hands-on experience. It aims to help students and aspiring ethical hackers learn how to:
 
-By streamlining multiple scanning techniques, EclipseRecon helps save time, increase precision, and enhance overall efficiency during security assessments and penetration testing.
+- 🕵️‍♂️ **Discover Hidden Subdomains**: Practice subdomain enumeration to reveal potential entry points.
+- 🔒 **Scan for Vulnerabilities**: Identify common weaknesses that could affect web security.
+- 🌐 **Crawl Websites**: Understand website structure by mapping and analyzing content.
+- 🚨 **OWASP-Compliant Security Analysis**: Perform basic assessments aligned with OWASP guidelines.
+- 📊 **Generate Comprehensive Reports**: Practice creating PDF and JSON reports to document findings.
+
+This tool combines several reconnaissance methods into one educational platform, making it easier to learn how different techniques work together during a security assessment.
 
 ## 🛠 Features
-- 🌍 **Subdomain Scanning**: Quickly discover subdomains to get a broader view of the attack surface.
-- 🔧 **Vulnerability Analysis**: Detect security weaknesses in web applications and associated resources.
-- 🧭 **Website Crawling**: Automatically crawl websites and generate sitemaps to analyze the site's structure.
-- 📋 **OWASP Testing**: Conduct robust security testing in line with the OWASP security testing methodology.
-- 📝 **Detailed Reporting**: Export your findings in easy-to-read PDF and JSON formats for in-depth analysis and reporting.
+
+- 🌍 **Subdomain Scanning**: Gain visibility into a site’s subdomain landscape.
+- 🔧 **Vulnerability Analysis**: Learn to detect common issues in web applications.
+- 🧭 **Website Crawling**: Build sitemaps and extract page data to better understand web architecture.
+- 📋 **OWASP Testing**: Get familiar with the OWASP testing methodology through guided scans.
+- 📝 **Detailed Reporting**: Export structured results in PDF and JSON formats for review and learning.
 
 <p align="center">
   <img src="doc/screenshots/picture_8.PNG" />
@@ -91,14 +95,14 @@ Make sure to install these dependencies using `pip install -r requirements.txt` 
 
 ## 🌍 Practical Use Cases
 
-EclipseRecon empowers cybersecurity professionals with versatile applications, including:
+EclipseRecon was developed as part of a learning process to explore real-world web reconnaissance techniques. While it’s not intended for production use, it offers practical value in educational and training contexts such as:
 
-1. 🛡️ **Penetration Testing**: Streamline asset enumeration and uncover weaknesses in target infrastructures with precision.  
-2. 🪲 **Bug Bounty Hunting**: Participate in bug bounty programs—initiatives where organizations reward security researchers for identifying and responsibly reporting vulnerabilities in their systems. EclipseRecon helps you uncover hidden entry points, subdomains, and weaknesses to enhance your findings.  
-3. 📊 **Security Auditing**: Conduct comprehensive digital footprint analysis and generate detailed reports to assess an organization's security posture.  
-4. ✅ **Compliance Checks**: Perform in-depth evaluations aligned with **OWASP** (Open Web Application Security Project) standards, a globally recognized framework for identifying and mitigating the most critical security risks in web applications. EclipseRecon ensures your systems meet the necessary benchmarks for security compliance.  
+1. 🛡️ **Penetration Testing Practice**: Simulate asset enumeration and identify common weaknesses in lab environments to understand the core phases of a penetration test.  
+2. 🪲 **Bug Bounty Simulations**: Practice participating in bug bounty programs by learning how to identify hidden entry points, subdomains, and potential vulnerabilities in controlled scenarios.  
+3. 📊 **Security Auditing Training**: Gain experience in mapping an organization's digital footprint and documenting findings through structured reports.  
+4. ✅ **Compliance Familiarization**: Apply OWASP-based checks to understand how security standards work in practice and what it means to align assessments with industry-recognized frameworks.  
 
-Whether you're a penetration tester, bug bounty hunter, or security analyst, EclipseRecon is your go-to tool for effective reconnaissance and vulnerability discovery. 🚀
+This project is ideal for students, ethical hacking enthusiasts, and anyone learning how to responsibly conduct reconnaissance and vulnerability discovery in a safe, hands-on way. 🚀
 
 <p align="center">
   <img src="doc/screenshots/picture_10.PNG" />
