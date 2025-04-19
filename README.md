@@ -1,4 +1,4 @@
-# EclipseRecon: 🌑 Unveiling the Shadows of the Web 🌐
+#  EclipseRecon 🌑 — A Personal Tool for Learning Web Reconnaissance
 
 EclipseRecon is an educational web reconnaissance tool developed as a practical exercise during a cybersecurity training course. 🧠🕵️‍♂️ Its main objective is to help learners understand how information gathering works in the context of ethical hacking and web application security. Through this project, key concepts such as subdomain enumeration, vulnerability discovery, and structural mapping of websites were explored in a hands-on manner. 💻🔍
 
@@ -19,21 +19,6 @@ By applying real-world techniques in a controlled and legal environment, Eclipse
 <p align="center">
   <img src="doc/screenshots/picture_1.PNG" />
 </p>
-
-## 🌟 **Explore My Other Open-Source Ethical Hacking Tools**
-
-If you're learning ethical hacking and looking for hands-on practice, check out my collection of open-source tools. These projects were developed as part of my personal learning journey in cybersecurity and are meant to help students, enthusiasts, and aspiring professionals practice real-world techniques in a safe and ethical way. 💻🧠
-
-Each tool focuses on a specific area of cybersecurity, offering an opportunity to explore and reinforce theoretical concepts through practical application:
-
-- [🦅 **NetHawk**](https://github.com/sergio11/nethawk_analyzer): A learning-focused **AI-powered network scanning tool** for practicing **vulnerability assessments**. Built with **Scapy** and **Nmap**, it automates port scanning, vulnerability detection, and report generation to support hands-on training in network auditing.
-- [💀 **Nemesys**](https://github.com/sergio11/nemesys): An educational tool for exploring **exploitation** and **post-exploitation** concepts using the **Metasploit Framework**. Useful for understanding data collection and system enumeration techniques.
-- [🕷️ **BlackVenom**](https://github.com/sergio11/blackvenom): A tool for simulating **ARP and DNS spoofing attacks** to understand how network traffic interception and redirection work in practice.
-- [🌐 **ZeroTrace**](https://github.com/sergio11/zero_trace_hacking_tool): Designed to explore **search engine dorking** as a method for discovering **exposed sensitive data** and learning about public information gathering techniques.
-- 🔐 **DecryptX**: A project to experiment with **hash and password security analysis**, ideal for testing password cracking, ZIP decryption, and encryption evaluation in a controlled environment.
-- [🌑 **EclipseRecon**](https://github.com/sergio11/eclipserecon): A web reconnaissance tool created to apply subdomain enumeration, vulnerability scanning, and site crawling as part of cybersecurity learning.
-- 🌐 **ZoneGuardian**: A DNS analysis tool developed to better understand how DNS misconfigurations can lead to security issues. Great for practicing DNS-related auditing.
-- **Retrospect**: A tool focused on **historical web reconnaissance**, allowing you to analyze past versions of websites to identify potential legacy vulnerabilities—ideal for digital forensics training.
 
 ## 🎯 Purpose
 
