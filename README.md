@@ -205,22 +205,7 @@ EclipseRecon extends its gratitude to the creators and maintainers of the [SecLi
 
 Special thanks to **Daniel Miessler**, **Jason Haddix**, and **g0tmi1k** for their dedication to maintaining and expanding this essential tool for the cybersecurity community. Your work empowers ethical hackers and security analysts worldwide to perform more efficient and comprehensive assessments. 🙌  
 
-
-## 🤝 **Contributing**
-Contributions to EclipseRecon are highly encouraged! If you're interested in adding new features, resolving bugs, or enhancing the project's functionality, please feel free to submit pull requests.
-
-## Get in Touch 📬
-
-EclipseRecon is developed and maintained by **Sergio Sánchez Sánchez** (Dream Software). Special thanks to the open-source community and the contributors who have made this project possible. If you have any questions, feedback, or suggestions, feel free to reach out at  [dreamsoftware92@gmail.com](mailto:dreamsoftware92@gmail.com).
-
-## Visitors Count
-
-<img width="auto" src="https://profile-counter.glitch.me/eclipserecon/count.svg" />
- 
- ## Please Share & Star the repository to keep me motivated.
-  <a href = "https://github.com/sergio11/eclipserecon/stargazers">
-     <img src = "https://img.shields.io/github/stars/sergio11/eclipserecon" />
-  </a>
+Special thanks to the open-source community and the contributors who have made this project possible.
 
 ## License ⚖️
 
@@ -258,7 +243,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## Visitors Count
 
+<img width="auto" src="https://profile-counter.glitch.me/eclipserecon/count.svg" />
 
 
 
