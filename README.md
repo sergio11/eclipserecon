@@ -243,9 +243,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Visitors Count
-
-<img width="auto" src="https://profile-counter.glitch.me/eclipserecon/count.svg" />
-
 
 
